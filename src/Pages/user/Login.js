@@ -6,6 +6,7 @@ function Login() {
     return (
         <div>
             <h1>Ini halaman Login</h1>
+            <h1>ini adalah halaman login</h1>
         </div>
     )
 }
