@@ -7,6 +7,7 @@ function Footer() {
         <div>
             <h1>Ini halaman footer</h1>
             <h1>Saya sedang testing sebuah halaman footer</h1>
+            <h1>Saya kasih halaman staging lagi</h1>
         </div>
     )
 }
