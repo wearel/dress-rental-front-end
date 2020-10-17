@@ -1,12 +1,13 @@
-import React from 'react'
-import "./ProductPage.css"
+import React from "react";
+// CSS
+import "./ProductPage.css";
 
 function ProductPage() {
-    return (
-        <div>
-            <h1>Ini halaman Product Page</h1>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Ini halaman Product Page</h1>
+    </div>
+  );
 }
 
-export default ProductPage
+export default ProductPage;
