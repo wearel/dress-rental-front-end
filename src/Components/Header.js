@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // Assets
 import Logo from "../Assets/Logo.png";
+
 // CSS
 import "./Header.css";
 
