@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Component
 import Header from "./Components/Header";
-import Dropdown from "./Components/Dropdown";
+// import Dropdown from "./Components/Dropdown";
 // import Footer from "./Components/Footer";
 
 // Page
@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Dropdown />
+        {/* <Dropdown /> */}
         <Switch>
           <Route exact path="/">
             <Home />

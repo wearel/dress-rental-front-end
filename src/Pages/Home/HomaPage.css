@@ -1,3 +1,49 @@
+.container {
+  background-color: #fed4d5;
+  padding-top: 80px;
+  max-width: 100%;
+}
+
+.title-text {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 80px;
+  text-align: left;
+  color: #555555;
+  mix-blend-mode: normal;
+}
+
+img {
+  max-width: 100%;
+}
+
+.desc-text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  color: #555555;
+  mix-blend-mode: normal;
+  text-align: left;
+}
+
+.cont-one {
+  padding-left: 216px;
+}
+
+.cont-two {
+  padding-right: 216px;
+}
+
+.btn {
+  text-align: left;
+}
+
 /* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -6,6 +52,38 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .title-text {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #555555;
+    mix-blend-mode: normal;
+  }
+  .desc-text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    color: #555555;
+    mix-blend-mode: normal;
+    text-align: center;
+  }
+  .cont-one {
+    padding-left: 0px;
+  }
+
+  .cont-two {
+    padding-right: 0px;
+  }
+
+  .btn {
+    text-align: center;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */
