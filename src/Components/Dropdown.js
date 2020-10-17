@@ -7,16 +7,22 @@ import { ReactComponent as ChevronIcon } from "../Assets/icons/chevron.svg";
 import { ReactComponent as ArrowIcon } from "../Assets/icons/arrow.svg";
 import { ReactComponent as BoltIcon } from "../Assets/icons/bolt.svg";
 
+// Assets
+import Logo from "../Assets/Logo.png";
+
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 
 function App() {
   return (
-    <Navbar>
-      <NavItem icon={<CaretIcon />}>
-        <DropdownMenu></DropdownMenu>
-      </NavItem>
-    </Navbar>
+    <div className="lose">
+      <Navbar>
+        <img className="logo" src={Logo} alt="logo" />
+        <NavItem icon={<CaretIcon />}>
+          <DropdownMenu></DropdownMenu>
+        </NavItem>
+      </Navbar>
+    </div>
   );
 }
 
