@@ -1,12 +1,13 @@
-import React from 'react'
-import "./ProductDetailPage.css"
+import React from "react";
+// CSS
+import "./ProductDetailPage.css";
 
 function ProductDetailPage() {
-    return (
-        <div>
-            <h1>Ini Halaman Product Detail</h1>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Ini Halaman Product Detail</h1>
+    </div>
+  );
 }
 
-export default ProductDetailPage
+export default ProductDetailPage;
