@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 // Style CSS
-import "./HomaPage.css"
+import "./HomaPage.css";
 
 function HomePage() {
-    return (
-        <div>
-            <h1>Ini halaman HomePage</h1>
-        </div>
-    )
+  return (
+    <div className="container">
+      <h1 className="judul">Ini halaman HomePage</h1>
+    </div>
+  );
 }
 
-export default HomePage
+export default HomePage;
