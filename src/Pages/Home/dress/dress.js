@@ -12,7 +12,7 @@ import DressFour from "../../../Assets/dress-4.jpg";
 
 function dress() {
   return (
-    <div>
+    <div className="cont-dress">
       {/* Grid 1 */}
       <Grid container spacing={0}>
         <Grid item xs={12} sm={6}>

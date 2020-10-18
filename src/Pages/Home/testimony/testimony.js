@@ -16,7 +16,7 @@ function testimony() {
     <div className="container-sec-3">
       <h1>How Our customer say</h1>
       <Slide />
-      <p>as seen on</p>
+      <p className="text-testi">As Seen On</p>
       <div className="cont-seen-sec-3">
         <div className="cont-seen">
           <img className="img-sec-3" src={impactByte} alt="impactbyte" />

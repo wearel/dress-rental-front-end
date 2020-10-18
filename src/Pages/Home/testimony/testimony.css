@@ -1,5 +1,7 @@
 .container-sec-3 {
   background-color: #fff9f9;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .cont-seen-sec-3 {
@@ -20,6 +22,15 @@
 .cont-seen {
   width: 100%;
   margin: 0 auto;
+}
+
+.text-testi {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: -1.5px;
+  color: #555555;
 }
 
 /* untuk responsive */
