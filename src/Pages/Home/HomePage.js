@@ -12,6 +12,9 @@ import DressFour from "../../Assets/dress-4.jpg";
 // Style CSS
 import "./HomaPage.css";
 
+// Component for slideshow
+import Slide from "./Slideshow/SlideShow";
+
 function HomePage() {
   return (
     <Fragment>
@@ -80,7 +83,7 @@ function HomePage() {
       </div>
       {/* Section 3 */}
       <div className="container-sec-3">
-        <h1>testing</h1>
+        <Slide />
       </div>
     </Fragment>
   );
