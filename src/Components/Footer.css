@@ -1,3 +1,11 @@
+.cont-foot-one {
+  background-color: #f1a3ad;
+}
+
+.cont-foot-two {
+  background-color: #f1a3ad;
+  display: flex;
+}
 /* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */

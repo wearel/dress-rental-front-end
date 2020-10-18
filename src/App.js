@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Component
 import Header from "./Components/Header";
 // import Dropdown from "./Components/Dropdown";
-// import Footer from "./Components/Footer";
+import Footer from "./Components/Footer";
 
 // Page
 import Home from "./Pages/Home/HomePage";
@@ -37,6 +37,7 @@ function App() {
             <Register />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );
