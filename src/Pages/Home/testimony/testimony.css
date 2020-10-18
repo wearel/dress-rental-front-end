@@ -1,3 +1,27 @@
+.container-sec-3 {
+  background-color: #fff9f9;
+}
+
+.cont-seen-sec-3 {
+  display: flex;
+}
+.img-sec-3 {
+  position: relative;
+  height: 50px;
+  width: 100px;
+  padding-right: 100px;
+}
+.img-sec-3 img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.cont-seen {
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */

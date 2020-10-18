@@ -7,6 +7,9 @@ import { ReactComponent as ChevronIcon } from "../Assets/icons/chevron.svg";
 import { ReactComponent as ArrowIcon } from "../Assets/icons/arrow.svg";
 import { ReactComponent as BoltIcon } from "../Assets/icons/bolt.svg";
 
+// React Router DOM
+import { Link } from "react-router-dom";
+
 // Assets
 import Logo from "../Assets/Logo.png";
 
@@ -86,7 +89,9 @@ function DropdownMenu() {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <DropdownItem>Home</DropdownItem>
+          <DropdownItem>
+            <Link to="/">Home</Link>
+          </DropdownItem>
           <DropdownItem>Product</DropdownItem>
           <DropdownItem>About Us</DropdownItem>
           <DropdownItem
