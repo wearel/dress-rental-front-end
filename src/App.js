@@ -10,8 +10,8 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home/HomePage";
 import Product from "./Pages/Product/Product";
 import About from "./Pages/About/About";
-import Login from "./Pages/User/Login";
-import Register from "./Pages/User/Register";
+import Login from "./Pages/user/Login";
+import Register from "./Pages/user/Register";
 
 function App() {
   return (
