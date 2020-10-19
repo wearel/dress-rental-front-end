@@ -13,7 +13,6 @@ import About from "./Pages/About/About";
 import Login from "./Pages/User/Login";
 import Register from "./Pages/User/Register";
 
-
 function App() {
   return (
     <div className="App">
