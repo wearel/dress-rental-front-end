@@ -6,7 +6,7 @@ const intialState = {
   isLoading: false,
 };
 
-export default (state = intialState, action) => {
+export function getProductReducers(state = intialState, action) {
   switch (action.type) {
     case GET_PRODUCT:
       return {
@@ -16,4 +16,4 @@ export default (state = intialState, action) => {
     default:
       return state;
   }
-};
+}
