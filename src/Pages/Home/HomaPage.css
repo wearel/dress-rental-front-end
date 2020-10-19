@@ -1,8 +1,10 @@
-/* Section 1 */
-.container {
+.cont-home {
   background-color: #fed4d5;
-  padding-top: 0px;
   max-width: 100%;
+  padding-top: 100px;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
 }
 
 .title-text {
@@ -61,13 +63,6 @@ img {
     color: #555555;
     mix-blend-mode: normal;
     text-align: center;
-  }
-  .cont-one {
-    padding-left: 0px;
-  }
-
-  .cont-two {
-    padding-right: 0px;
   }
 
   .btn {

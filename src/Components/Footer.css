@@ -1,10 +1,55 @@
-.cont-foot-one {
+.cont-footer {
   background-color: #f1a3ad;
+  padding-top: 80px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
-.cont-foot-two {
+.text-footer-about {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  text-align: left;
+  line-height: 28px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+}
+
+.text-footer-title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+}
+
+.text-footer-list {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+}
+
+.cont-footer-social {
   background-color: #f1a3ad;
   display: flex;
+}
+
+.cont-social {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pic {
+  height: 35px;
+  width: 35px;
+  padding: 10px;
 }
 /* untuk responsive */
 

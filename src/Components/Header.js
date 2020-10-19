@@ -1,17 +1,11 @@
 import React from "react";
-// React Router DOM
 import { Link } from "react-router-dom";
-// Material UI
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
-
-// Assets
 import Logo from "../Assets/Logo.png";
-
-// CSS
 import "./Header.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 function Header() {
   const classes = useStyles();
   return (
-    <div className="container">
+    <div className="cont-header">
       <AppBar>
         <Toolbar className="appbar">
           <img className="logo" src={Logo} alt="logo" />

@@ -1,10 +1,9 @@
 import React from "react";
-// CSS
-import "./ProductDetailPage.css";
+import "./ProductDetail.css";
 
 function ProductDetailPage() {
   return (
-    <div>
+    <div className="cont-product-detail">
       <h1>Ini Halaman Product Detail</h1>
     </div>
   );
