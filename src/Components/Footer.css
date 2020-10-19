@@ -1,14 +1,44 @@
-.cont-foot-one {
+.cont-footer {
   background-color: #f1a3ad;
   padding-top: 80px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
-.cont-foot-in-one {
-  padding-left: 230px;
+.text-footer-about {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  text-align: left;
+  line-height: 28px;
+  color: #ffffff;
+  mix-blend-mode: normal;
 }
 
-.cont-foot-in-two {
-  padding-right: 230px;
+.text-footer-title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+}
+
+.text-footer-list {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+}
+
+.cont-footer-social {
+  background-color: #f1a3ad;
+  display: flex;
 }
 
 .cont-social {
@@ -20,47 +50,6 @@
   height: 35px;
   width: 35px;
   padding: 10px;
-}
-
-.cont-foot-in-two {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.cont-foot-two {
-  background-color: #f1a3ad;
-  display: flex;
-}
-
-.text-title {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 28px;
-  color: #ffffff;
-  mix-blend-mode: normal;
-}
-
-.text-foot-about {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  text-align: left;
-  line-height: 28px;
-  color: #ffffff;
-  mix-blend-mode: normal;
-}
-
-.text-foot-two {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 28px;
-  color: #ffffff;
-  mix-blend-mode: normal;
 }
 /* untuk responsive */
 

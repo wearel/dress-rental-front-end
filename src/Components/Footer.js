@@ -1,9 +1,6 @@
 import React, { Fragment } from "react";
 import Grid from "@material-ui/core/Grid";
-// CSS
 import "./Footer.css";
-
-// Assets
 import Logo from "../Assets/Logo.png";
 import Instagram from "../Assets/social/Instagram_white.png";
 import Facebook from "../Assets/social/Facebook_white.png";
@@ -14,48 +11,48 @@ import Youtube from "../Assets/social/Youtube_white.png";
 function Footer() {
   return (
     <Fragment>
-      <div className="cont-foot-one">
-        <Grid className="cont-foot-in-one" container spacing={0}>
+      <div className="cont-footer">
+        <Grid container spacing={0}>
           <Grid item xs={6} sm={3}>
             <img src={Logo} alt="logo" />
-            <p className="text-foot-about">
+            <p className="text-footer-about">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
               eos explicabo fugiat, vitae eveniet cum consequatur, ab neque, vel
               sed quae fugit culpa beatae a quos molestias repellendus
               laudantium. Perspiciatis!
             </p>
-            <p className="text-foot-about">
+            <p className="text-footer-about">
               ©2020 Thousand Sunny. All rights reserved
             </p>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <h1 className="text-title">Services</h1>
-            <p className="text-foot-two">Booking</p>
-            <p className="text-foot-two">Renting</p>
-            <p className="text-foot-two">Retail</p>
-            <p className="text-foot-two">Listing</p>
-            <p className="text-foot-two">Vendor</p>
+            <h1 className="text-footer-title">Services</h1>
+            <p className="text-footer-list">Booking</p>
+            <p className="text-footer-list">Renting</p>
+            <p className="text-footer-list">Retail</p>
+            <p className="text-footer-list">Listing</p>
+            <p className="text-footer-list">Vendor</p>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <h1 className="text-title">Contact</h1>
-            <p className="text-foot-two">
+            <h1 className="text-footer-title">Contact</h1>
+            <p className="text-footer-list">
               Building Office 3 Jakarta, Indonesia
             </p>
-            <p className="text-foot-two">Wearel@gmail.com</p>
-            <p className="text-foot-two">+62858489433</p>
-            <p className="text-foot-two">(0286) 394843</p>
+            <p className="text-footer-list">Wearel@gmail.com</p>
+            <p className="text-footer-list">+62858489433</p>
+            <p className="text-footer-list">(0286) 394843</p>
           </Grid>
-          <Grid className="cont-foot-in-two" item xs={6} sm={3}>
-            <h1 className="text-title">General</h1>
-            <p className="text-foot-two">News</p>
-            <p className="text-foot-two">FAQ</p>
-            <p className="text-foot-two">Career</p>
-            <p className="text-foot-two">Term & Condition</p>
+          <Grid item xs={6} sm={3}>
+            <h1 className="text-footer-title">General</h1>
+            <p className="text-footer-list">News</p>
+            <p className="text-footer-list">FAQ</p>
+            <p className="text-footer-list">Career</p>
+            <p className="text-footer-list">Term & Condition</p>
           </Grid>
         </Grid>
       </div>
 
-      <div className="cont-foot-two">
+      <div className="cont-footer-social">
         <div className="cont-social">
           <div>
             <img className="pic" src={Instagram} alt="instagram" />

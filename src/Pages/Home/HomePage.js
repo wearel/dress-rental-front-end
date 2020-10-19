@@ -1,11 +1,8 @@
 import React, { Fragment } from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-// Assets
-import Couple from "../../Assets/couple.jpg";
-// Style CSS
 import "./HomaPage.css";
-// Component
+import Couple from "../../Assets/couple.jpg";
 import Dress from "./dress/dress";
 import Testimony from "./testimony/testimony";
 
@@ -13,10 +10,10 @@ function HomePage() {
   return (
     <Fragment>
       {/* Section 1 */}
-      <div className="container">
+      <div className="cont-home">
         <div>
           <Grid container spacing={0}>
-            <Grid className="cont-one" item xs={6}>
+            <Grid item xs={6}>
               <p className="title-text">Find Your Best Dress For Wedding</p>
               <p className="desc-text">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
@@ -30,7 +27,7 @@ function HomePage() {
                 </Button>
               </div>
             </Grid>
-            <Grid className="cont-two" item xs={6}>
+            <Grid item xs={6}>
               <img src={Couple} alt="couple" />
             </Grid>
           </Grid>
