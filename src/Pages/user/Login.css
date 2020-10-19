@@ -1,5 +1,11 @@
+.cont-login {
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+}
+
 .form-input {
-    margin-top : 50px;    
+  margin-top: 50px;
 }
 
 /* untuk responsive */
@@ -19,4 +25,3 @@
 /* Large devices (desktops, less than 1200px) */
 @media only screen and (max-width: 1199.98px) {
 }
-

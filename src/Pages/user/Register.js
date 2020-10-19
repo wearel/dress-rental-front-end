@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 // Style CSS
 import "./Register.css";
@@ -13,12 +13,11 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import { AccountCircle, LockRounded, AddIcCall } from "@material-ui/icons";
 
 function Register() {
-
   const [register, setRegister] = useState({
-    name :"",
-    email :"",
-    password :"",
-    nohandphone :""
+    name: "",
+    email: "",
+    password: "",
+    nohandphone: "",
   });
 
   // handleChange form
@@ -27,18 +26,17 @@ function Register() {
       ...register,
       [event.target.name]: event.target.value,
     });
-  }
-const handleSubmit = (event) => {
-  event.preventDefault()
-  
-  Axios.post("https://gaun-rental.herokuapp.com/register", register)
-    .then((response)=>alert(response.data.message) )
-    .catch(error => console.log(error))
-}
-  
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    Axios.post("https://gaun-rental.herokuapp.com/register", register)
+      .then((response) => alert(response.data.message))
+      .catch((error) => console.log(error));
+  };
 
   return (
-    <div>
+    <div className="cont-register">
       <div>
         <Grid container spacing={0} justify="center" style={{ marginTop: 130 }}>
           <Grid item>
@@ -72,8 +70,8 @@ const handleSubmit = (event) => {
                         ),
                       }}
                       name="name"
-                    value={register.name}
-                    onChange={(event)=> handleChange(event)}
+                      value={register.name}
+                      onChange={(event) => handleChange(event)}
                     />
 
                     {/* input email */}
@@ -89,7 +87,7 @@ const handleSubmit = (event) => {
                       }}
                       name="email"
                       value={register.email}
-                      onChange={(event)=> handleChange(event)}
+                      onChange={(event) => handleChange(event)}
                     />
 
                     {/* input password */}
@@ -121,11 +119,14 @@ const handleSubmit = (event) => {
                         ),
                       }}
                       name="nohandphone"
-                    value={register.nohandphone}
-                    onChange={(event)=> handleChange(event)}
+                      value={register.nohandphone}
+                      onChange={(event) => handleChange(event)}
                     />
 
-                    <Button type="submit" style={{ backgroundColor: "#f1a3ad" }}>
+                    <Button
+                      type="submit"
+                      style={{ backgroundColor: "#f1a3ad" }}
+                    >
                       Sign up
                     </Button>
                   </div>
@@ -138,7 +139,7 @@ const handleSubmit = (event) => {
               </div>
 
               {/* section gambar */}
-              <div ></div>
+              <div></div>
             </Paper>
           </Grid>
         </Grid>
