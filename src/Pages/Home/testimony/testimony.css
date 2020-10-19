@@ -1,27 +1,40 @@
-.cont-header {
-  flex-grow: 1;
-}
-
-.appbar {
-  background-color: #f1a3ad;
-}
-
-.logo {
-  max-width: 100%;
-  width: 180px;
-  height: 40px;
+.cont-testi {
+  background-color: #fff9f9;
+  padding-top: 100px;
   padding-left: 200px;
-  padding-right: 430px;
+  padding-right: 200px;
+  padding-bottom: 100px;
 }
-
-.title {
-  padding-right: 19px;
+.text-testi {
   font-family: Inter;
   font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: -1.5px;
   color: #555555;
 }
+.cont-img {
+  display: flex;
+}
+
+.cont-seen {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.img-in {
+  position: relative;
+  height: 50px;
+  width: 100px;
+  padding-right: 100px;
+}
+.img-in img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
@@ -29,14 +42,6 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
-  .logo {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .title {
-    display: none;
-  }
 }
 
 /* Medium devices (tablets, less than 992px) */

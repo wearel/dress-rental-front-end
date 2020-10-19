@@ -1,0 +1,62 @@
+.cont-dress {
+  padding-top: 100px;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+}
+
+.title-dress {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 64px;
+  letter-spacing: -1.5px;
+  color: #555555;
+  text-align: left;
+}
+
+.desc-dress {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 35px;
+  letter-spacing: -1.5px;
+  color: #555555;
+  text-align: left;
+}
+
+.img-dress {
+  padding-top: 60px;
+}
+
+.img-dress-in {
+  max-width: 100%;
+  width: 202px;
+  height: 294px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 8px red;
+}
+
+.img-space {
+  padding-top: 15px;
+}
+
+/* untuk responsive */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media only screen and (max-width: 1199.98px) {
+}

@@ -1,27 +1,8 @@
-.cont-header {
-  flex-grow: 1;
+.cont-product-detail {
+  padding: 200px;
 }
 
-.appbar {
-  background-color: #f1a3ad;
-}
-
-.logo {
-  max-width: 100%;
-  width: 180px;
-  height: 40px;
-  padding-left: 200px;
-  padding-right: 430px;
-}
-
-.title {
-  padding-right: 19px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  color: #555555;
-}
+/* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
@@ -29,14 +10,6 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
-  .logo {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .title {
-    display: none;
-  }
 }
 
 /* Medium devices (tablets, less than 992px) */
