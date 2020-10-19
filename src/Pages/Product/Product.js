@@ -2,6 +2,7 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 import "./Product.css";
 
 // Data Category Dress
@@ -27,10 +28,9 @@ function ProductPage() {
 
   return (
     <div className="cont-product">
-      <h1>Our Product</h1>
       <Grid container spacing={5}>
         {" "}
-        <Grid item xs={6} sm={3}>
+        <Grid className="teks" item xs={6} sm={3}>
           <Autocomplete
             id="grouped-demo"
             options={options.sort(
@@ -55,7 +55,7 @@ function ProductPage() {
               (a, b) => -b.firstLetter.localeCompare(a.firstLetter)
             )}
             groupBy={(option) => option.firstLetter}
-            getOptionLabel={(option) => option.year}
+            getOptionLabel={(option) => option.title}
             style={{ width: 300 }}
             renderInput={(params) => (
               <TextField {...params} label="Harga" variant="outlined" />
@@ -63,10 +63,12 @@ function ProductPage() {
           />
         </Grid>
         <Grid item xs={6} sm={3}>
-          <p>test</p>
+          <p></p>
         </Grid>
         <Grid item xs={6} sm={3}>
-          <p>test</p>
+          <Button variant="contained" color="secondary">
+            Find Dress
+          </Button>
         </Grid>
       </Grid>
     </div>

@@ -10,6 +10,6 @@ export const getProduct = () => {
 export const getProductAction = () => {
   return function (dispatch) {
     dispatch(getProduct());
-    axios.get("https://5f51a6945e98480016123be3.mockapi.io/product");
+    axios.get("https://gaun-rental.herokuapp.com/products");
   };
 };
