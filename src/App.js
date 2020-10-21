@@ -12,6 +12,7 @@ import Product from "./Pages/Product/Product";
 import About from "./Pages/About/About";
 import Login from "./Pages/user/Login";
 import Register from "./Pages/user/Register";
+import Detail from "./Pages/Product/ProductDetail";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/detail">
+            <Detail />
           </Route>
           <Route path="/product">
             <Product />
