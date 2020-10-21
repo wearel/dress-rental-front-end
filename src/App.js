@@ -13,6 +13,7 @@ import About from "./Pages/About/About";
 import Login from "./Pages/user/Login";
 import Register from "./Pages/user/Register";
 import Detail from "./Pages/Product/ProductDetail";
+import Booking from "./Pages/Payment/Booking";
 
 function App() {
   return (
@@ -23,11 +24,14 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route path="/product">
+            <Product />
+          </Route>
           <Route path="/detail">
             <Detail />
           </Route>
-          <Route path="/product">
-            <Product />
+          <Route path="/booking">
+            <Booking />
           </Route>
           <Route path="/about">
             <About />
