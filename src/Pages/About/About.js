@@ -1,6 +1,6 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 import Foto from "./Foto/Foto";
 
@@ -9,18 +9,18 @@ export default function AboutUs() {
     <React.Fragment>
       <CssBaseline />
       <Container>
-        <Typography
+        <Paper
           component="div"
           style={{
             backgroundColor: "#E7CDD0",
-            height: "47rem",
+            height: "40rem",
             marginTop: "7rem",
             marginBottom: "3rem",
             borderRadius: "20px",
           }}
         >
           <Foto />
-        </Typography>
+        </Paper>
       </Container>
     </React.Fragment>
   );
