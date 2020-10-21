@@ -1,11 +1,12 @@
-// import axios from "axios";
+import axios from "axios";
 export const GET_PRODUCT_REQUEST = "GET_PRODUCT_REQUEST";
 export const GET_PRODUCT_SUCCESS = "GET_PRODUCT_SUCCESS";
 export const GET_PRODUCT_FAILED = "GET_PRODUCT_FAILED";
 
-export const getProductRequest = () => {
+export const getProductRequest = (data) => {
   return {
     type: GET_PRODUCT_REQUEST,
+    payload: data,
   };
 };
 
@@ -23,12 +24,12 @@ export const getProductFailed = (error) => {
   };
 };
 
-// export default getProductAction = () => {
-//   return function (dispatch) {
-//     dispatch(getProductRequest());
-//     axios
-//     .get("https://gaun-rental.herokuapp.com/products");
-//     .then((result) => dispatch(getProductSuccess(result.data)))
-//     .catch((error) => dispatch(getProductFailed(error)))
-//   };
-// };
+export const getProductAction = () => {
+  return async (dispatch) => {
+    const response = await axios.get(
+      "https://5f51a6945e98480016123be3.mockapi.io/products"
+    );
+    dispatch(getProductRequest(response.data));
+    console.log("Hasil get data", response);
+  };
+};

@@ -29,6 +29,11 @@ function Header() {
             </Link>
           </Typography>
           <Typography>
+            <Link to="/detail" style={{ textDecoration: "none" }}>
+              <p className="title">Detail</p>
+            </Link>
+          </Typography>
+          <Typography>
             <Link to="/product" style={{ textDecoration: "none" }}>
               <p className="title">Product</p>
             </Link>
