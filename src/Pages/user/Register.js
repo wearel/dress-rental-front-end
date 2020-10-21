@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import Axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+// import Axios from "axios";
+
+import { registerActions } from '../../Redux/Actions/user.action';
+
 // Style CSS
 import "./Register.css";
 
@@ -13,12 +18,19 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import { AccountCircle, LockRounded, AddIcCall } from "@material-ui/icons";
 
 function Register() {
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const [register, setRegister] = useState({
     name: "",
     email: "",
     password: "",
     nohandphone: "",
   });
+
+  const isLogged = useSelector((state) => state.user);
+  console.log('isLogged', isLogged);
 
   // handleChange form
   const handleChange = (event) => {
@@ -27,13 +39,13 @@ function Register() {
       [event.target.name]: event.target.value,
     });
   };
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
 
-    Axios.post("https://gaun-rental.herokuapp.com/register", register)
-      .then((response) => alert(response.data.message))
-      .catch((error) => console.log(error));
-  };
+  //   Axios.post("https://gaun-rental.herokuapp.com/register", register)
+  //     .then((response) => alert(response.data.message))
+  //     .catch((error) => console.log(error));
+  // };
 
   return (
     <div className="cont-register">
@@ -47,7 +59,9 @@ function Register() {
               <div style={{ height: 500, width: 400 }}>
                 <h3>Register</h3>
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={(event) => {
+                    dispatch(registerActions(register, event, history));
+                }}>
                   <div
                     style={{
                       display: "flex",
