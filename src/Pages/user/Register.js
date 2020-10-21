@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-// import Axios from "axios";
+import { registerActions } from "../../Redux/Actions/user.action";
 
-import { registerActions } from '../../Redux/Actions/user.action';
-
-// Style CSS
+// --------------- Style CSS ---------------
 import "./Register.css";
 
-// material ui component
+// --------------- material ui core component ---------------
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
 import InputAdornment from "@material-ui/core/InputAdornment";
+
+// --------------- material ui icon ---------------
 import { AccountCircle, LockRounded, AddIcCall } from "@material-ui/icons";
 
 function Register() {
-
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -30,18 +28,19 @@ function Register() {
   });
 
   const isLogged = useSelector((state) => state.user);
-  console.log('isLogged', isLogged);
+  console.log("isLogged", isLogged);
 
-  // handleChange form
+  // --------------- handleChange form ---------------
   const handleChange = (event) => {
     setRegister({
       ...register,
       [event.target.name]: event.target.value,
     });
   };
+
+  // --------------- code handle submit tanpa redux ---------------
   // const handleSubmit = (event) => {
   //   event.preventDefault();
-
   //   Axios.post("https://gaun-rental.herokuapp.com/register", register)
   //     .then((response) => alert(response.data.message))
   //     .catch((error) => console.log(error));
@@ -55,13 +54,15 @@ function Register() {
             <Paper
               style={{ height: 500, width: 800, padding: 20, display: "flex" }}
             >
-              {/* form login */}
+              {/* --------------- form register --------------- */}
               <div style={{ height: 500, width: 400 }}>
                 <h3>Register</h3>
 
-                <form onSubmit={(event) => {
+                <form
+                  onSubmit={(event) => {
                     dispatch(registerActions(register, event, history));
-                }}>
+                  }}
+                >
                   <div
                     style={{
                       display: "flex",
@@ -72,7 +73,7 @@ function Register() {
                       marginRight: 70,
                     }}
                   >
-                    {/* input Full Name */}
+                    {/* --------------- input Full Name --------------- */}
                     <TextField
                       label="Full Name"
                       margin="normal"
@@ -88,7 +89,7 @@ function Register() {
                       onChange={(event) => handleChange(event)}
                     />
 
-                    {/* input email */}
+                    {/* --------------- input email --------------- */}
                     <TextField
                       label="E-mail"
                       margin="normal"
@@ -104,7 +105,7 @@ function Register() {
                       onChange={(event) => handleChange(event)}
                     />
 
-                    {/* input password */}
+                    {/* --------------- input password --------------- */}
                     <TextField
                       label="Password"
                       margin="normal"
@@ -121,7 +122,7 @@ function Register() {
                       onChange={(event) => handleChange(event)}
                     />
 
-                    {/* input Phone Number */}
+                    {/* --------------- input Phone Number --------------- */}
                     <TextField
                       label="Phone Number"
                       margin="normal"
@@ -152,7 +153,7 @@ function Register() {
                 </h6>
               </div>
 
-              {/* section gambar */}
+              {/* --------------- section gambar --------------- */}
               <div></div>
             </Paper>
           </Grid>

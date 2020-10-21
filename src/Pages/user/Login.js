@@ -1,42 +1,41 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-
 import { loginActions } from "../../Redux/Actions/user.action";
 
-// Style CSS
+// ---------------- Style CSS ---------------
 import "./Login.css";
 
-// material ui component
+// --------------- material ui core component ---------------
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
 import InputAdornment from "@material-ui/core/InputAdornment";
+
+// --------------- material ui icon ---------------
 import { AccountCircle, LockRounded } from "@material-ui/icons";
-// import Axios from "axios";
 
 function Login() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
   const history = useHistory();
-  
+  // const user = useSelector((state) => state.user);
+
   const [login, setLogin] = useState({
     email: "",
     password: "",
   });
 
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // do stuff
-    if (user.error !== null) {
-      setError(user.error);
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   // do stuff
+  //   if (user.error !== null) {
+  //     setError(user.error);
+  //   }
+  // }, [user]);
 
-  // handleChange form
+  // --------------- handleChange form ---------------
   const handleChange = (event) => {
     setLogin({
       ...login,
@@ -44,12 +43,14 @@ function Login() {
     });
   };
 
+  // --------------- handleSubmit form ---------------
   const handleSubmit = (event) => {
     dispatch(loginActions(login, event, history));
 
-    if (user.error !== null) {
-      setError(user.error);
-    };
+    
+    // if (user.error !== null) {
+    //   setError(user.error);
+    // }
 
     // event.preventDefault();
 
@@ -70,10 +71,10 @@ function Login() {
           <Paper
             style={{ height: 500, width: 800, padding: 20, display: "flex" }}
           >
-            {/* section gambar */}
+            {/* --------------- section gambar --------------- */}
             <div></div>
 
-            {/* form login */}
+            {/* --------------- form login --------------- */}
             <div style={{ height: 500, width: 400 }}>
               <h3>Login</h3>
               <form onSubmit={handleSubmit}>
@@ -87,7 +88,7 @@ function Login() {
                     marginRight: 70,
                   }}
                 >
-                  {/* input email */}
+                  {/* -------------- input email pada form --------------- */}
                   <TextField
                     label="E-mail"
                     margin="normal"
@@ -103,7 +104,7 @@ function Login() {
                     onChange={(event) => handleChange(event)}
                   />
 
-                  {/* input password */}
+                  {/* --------------- input password pada form --------------- */}
                   <TextField
                     label="Password"
                     margin="normal"
@@ -125,7 +126,7 @@ function Login() {
                 </div>
               </form>
 
-              {/* bukan button form */}
+              {/* --------------- bukan button form --------------- */}
               <h6>
                 Don't have an account ? please
                 <Button style={{ color: "#fia3ad" }}>Sign up</Button>
