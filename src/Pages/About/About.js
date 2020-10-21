@@ -1,12 +1,27 @@
 import React from "react";
-import "./About.css";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Paper from "@material-ui/core/Paper";
+import Container from "@material-ui/core/Container";
+import Foto from "./Foto/Foto";
 
-function AboutUs() {
+export default function AboutUs() {
   return (
-    <div>
-      <h1>Ini halaman about us</h1>
-    </div>
+    <React.Fragment>
+      <CssBaseline />
+      <Container>
+        <Paper
+          component="div"
+          style={{
+            backgroundColor: "#E7CDD0",
+            height: "40rem",
+            marginTop: "7rem",
+            marginBottom: "3rem",
+            borderRadius: "20px",
+          }}
+        >
+          <Foto />
+        </Paper>
+      </Container>
+    </React.Fragment>
   );
 }
-
-export default AboutUs;
