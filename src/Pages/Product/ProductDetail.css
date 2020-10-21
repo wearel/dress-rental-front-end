@@ -9,27 +9,36 @@
   font-family: Mulish;
   font-style: normal;
   font-weight: 900;
-  font-size: 50px;
-  line-height: 80px;
+  font-size: 26px;
   color: #555555;
-}
-
-.text-desc-detail {
-  font-family: Mulish;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 34px;
-  line-height: 30px;
-  color: #555555;
+  text-align: left;
 }
 
 .title-desc-detail {
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;
-  font-size: 38px;
-  line-height: 80px;
+  font-size: 20px;
   color: #555555;
+  text-align: left;
+}
+
+.text-desc-detail {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  color: #555555;
+  text-align: left;
+}
+
+.vendor-category-detail {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #555555;
+  text-align: left;
 }
 
 .test {
