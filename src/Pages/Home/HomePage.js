@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import "./HomaPage.css";
@@ -22,9 +23,11 @@ function HomePage() {
                 soluta quisquam ipsum at.
               </p>
               <div className="btn">
-                <Button variant="contained" color="secondary">
-                  Find Your Dress
-                </Button>
+                <Link to="/product" style={{ textDecoration: "none" }}>
+                  <Button variant="contained" color="secondary">
+                    Find Your Dress
+                  </Button>
+                </Link>
               </div>
             </Grid>
             <Grid item xs={6}>
