@@ -9,7 +9,6 @@ import DressOne from "../../Assets/dress-1.jpg";
 import DressTwo from "../../Assets/dress-2.jpg";
 import DressThree from "../../Assets/dress-3.jpg";
 import DressFour from "../../Assets/dress-4.jpg";
-import "./GalleryProduct.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
