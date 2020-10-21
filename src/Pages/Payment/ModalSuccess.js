@@ -1,5 +1,5 @@
 import React from "react";
-import "./Success.css";
+import "./ModalSuccess.css";
 
 function SuccessPage() {
   return (

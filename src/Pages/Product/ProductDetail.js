@@ -1,12 +1,91 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
+import { Link } from "react-router-dom";
 import "./ProductDetail.css";
 
-function ProductDetailPage() {
+// Assets
+import Dress from "../../Assets/dress-1.jpg";
+// Pages
+import GalleryProduct from "./GalleryProduct";
+
+const useStyles = makeStyles({
+  media: {
+    height: 540,
+  },
+});
+
+export default function MediaCard() {
+  const classes = useStyles();
+
   return (
-    <div className="cont-product-detail">
-      <h1>Ini Halaman Product Detail</h1>
-    </div>
+    <Fragment>
+      <div className="cont-product-detail">
+        <Card>
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6}>
+              <CardActionArea className="test">
+                <CardMedia
+                  className={classes.media}
+                  image={Dress}
+                  title="Contemplative Reptile"
+                />
+                <GalleryProduct />
+              </CardActionArea>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <CardActionArea>
+                <CardContent>
+                  <p className="text-title-detail"> Javanese Dress</p>
+                  <Divider />
+                  <p className="title-desc-detail">Product Description</p>
+                  <p
+                    className="text-desc-detail"
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
+                    iure, in harum distinctio veritatis explicabo sequi quo a
+                    quidem, ullam, laborum vero? Beatae quod, sint eveniet
+                    accusamus assumenda sed officiis? Lorem, ipsum dolor sit
+                    amet consectetur adipisicing elit. Veritatis omnis, velit,
+                    vel et illum facere impedit eaque nobis debitis ea porro
+                    natus minima dolore. Sunt dolorem numquam quis aliquam qui!
+                  </p>
+                  <Divider />
+                  <p className="text-title-detail">Price Per Day</p>
+                  <p className="text-desc-detail">Rp 15.000</p>
+                  <Divider />
+                  <p className="vendor-category-detail">
+                    Category: Javanese Culture
+                  </p>
+                  <p className="vendor-category-detail">
+                    By Handmade Javanese Lace — Wedding Dress
+                  </p>
+                </CardContent>
+              </CardActionArea>
+              <Link to="/booking" style={{ textDecoration: "none" }}>
+                <Button variant="contained" color="secondary">
+                  Rent Now
+                </Button>
+              </Link>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Share
+                </Button>
+              </CardActions>
+            </Grid>
+          </Grid>
+        </Card>
+      </div>
+    </Fragment>
   );
 }
-
-export default ProductDetailPage;

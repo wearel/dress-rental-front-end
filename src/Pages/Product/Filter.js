@@ -40,11 +40,7 @@ function Filter() {
             getOptionLabel={(option) => option.title}
             style={{ width: 300 }}
             renderInput={(params) => (
-              <TextField
-                {...params}
-                label="With categories"
-                variant="outlined"
-              />
+              <TextField {...params} label="Categories" variant="outlined" />
             )}
           />
         </Grid>
