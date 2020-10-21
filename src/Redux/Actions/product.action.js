@@ -1,6 +1,7 @@
 import axios from "axios";
 export const GET_PRODUCT_REQUEST = "GET_PRODUCT_REQUEST";
 export const GET_PRODUCT_SUCCESS = "GET_PRODUCT_SUCCESS";
+export const GET_PRODUCT_DETAIL = "GET_PRODUCT_DETAIL";
 export const GET_PRODUCT_FAILED = "GET_PRODUCT_FAILED";
 
 export const getProductRequest = (data) => {
@@ -17,6 +18,12 @@ export const getProductSuccess = (result) => {
   };
 };
 
+export function getProductDetail(result) {
+  return {
+      type: GET_PRODUCT_DETAIL,
+      result,
+  }
+}
 export const getProductFailed = (error) => {
   return {
     type: GET_PRODUCT_FAILED,
@@ -33,3 +40,12 @@ export const getProductAction = () => {
     console.log("Hasil get data", response);
   };
 };
+
+export const getProductById = (id) => {
+  return async(dispatch) => {
+    const response = await axios
+    .get(`https://5f51a6945e98480016123be3.mockapi.io/products/${id}`);
+    dispatch(getProductDetail(response.data));
+    console.log('hasil detail', response);
+  }
+}
