@@ -54,11 +54,11 @@ function Header() {
               <p className="title">Home</p>
             </Link>
           </Typography>
-          <Typography>
-            <Link to="/detail" style={{ textDecoration: "none" }}>
+          {/* <Typography>
+            <Link to="/detail-product/:id" style={{ textDecoration: "none" }}>
               <p className="title">Detail</p>
             </Link>
-          </Typography>
+          </Typography> */}
           <Typography>
             <Link to="/product" style={{ textDecoration: "none" }}>
               <p className="title">Product</p>
