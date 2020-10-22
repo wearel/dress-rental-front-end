@@ -40,13 +40,8 @@ export default function MediaCard() {
         // eslint-disable-next-line
     }, []);
 
+    const detailProduct = useSelector((state) => state.product.data);
 
-  useEffect(() => {
-    // eslint-disable-next-line
-    dispatch(getProductById(id));
-  }, []);
-
-  const detailProduct = useSelector((state) => state.product.data);
 
   console.log("component detail product", detailProduct);
   return (

@@ -66,21 +66,22 @@ function Header() {
               <p className="title">About Us</p>
             </Link>
           </Typography>
-          <div className={classes.root}>
-            <Button variant="contained" color="secondary">
-              {dataUser.data === undefined && dataUser.data !== 0 ? (
-                <Link to="/login" style={{ textDecoration: "none" }}>
-                  Login
-                </Link>
-              ) : (
-                <div
-                  onClick={() => logoutSuccess()}
-                  style={{ textDecoration: "none" }}
-                >
-                  Logout
-                </div>
-              )}
-            </Button>
+          <div className={classes.root}
+             <Button variant="contained" color="secondary">
+              { dataUser.data === undefined && dataUser.data !== 0 ? 
+              ( 
+              <Link to="/login" style={{ textDecoration: "none", color: 'white' }}>
+              Login
+            </Link>
+            )
+              : (
+                <div onClick={() => logoutSuccess()}  style={{ textDecoration: "none" }}>
+                Logout
+              </div>
+              ) 
+            }
+            </Button> 
+
             {/* <Button variant="contained" color="secondary">
               <Link to="/register" style={{ textDecoration: "none" }}>
                 Register
