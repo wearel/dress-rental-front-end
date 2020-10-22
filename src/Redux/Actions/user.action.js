@@ -5,7 +5,8 @@ import Swal from "sweetalert2";
 export const REGISTER = 'REGISTER';
 export const LOGIN = "LOGIN";
 export const GET_ERROR = "GET_ERROR";
-// export const GET_USER_INFO = "GET_USER_INFO"
+export const GET_USER_INFO = "GET_USER_INFO";
+export const LOGOUT = "LOGOUT"
 
 
 // function dari constant
@@ -30,12 +31,18 @@ export const getError = (data) =>{
     };
 };
 
-// export const getUserInfo = (data) =>{
-//     return {
-//         type : GET_USER_INFO,
-//         payload : data,
-//     };
-// };
+export const getUserInfo = (data) =>{
+    return {
+        type : GET_USER_INFO,
+        payload : data,
+    };
+};
+
+export const getLogout = () => {
+    return {
+        type: LOGOUT,    
+    }
+}
 
 
 // function isi dari set
@@ -44,7 +51,7 @@ export const registerActions = (values, event, history) => (dispatch) => {
     // console.log('tes param', values);
 
     return axios
-        .post("https://gaun-rental.herokuapp.com/register", values)
+        .post("http://localhost:8080/register", values)
         .then((response) => {
             console.log('res', response);
             dispatch(setRegister(response.data.user));
@@ -67,7 +74,7 @@ export const loginActions = (values, event, history) => {
         // console.log("tes berhasil", values);
 
         return axios
-        .post("https://gaun-rental.herokuapp.com/login", values)
+        .post("http://localhost:8080/login", values)
         .then((response)=>{
             // console.log(response);
 
@@ -85,6 +92,13 @@ export const loginActions = (values, event, history) => {
                 dispatch(setLogin(response.data.token));
                 history.push("/");
 
+            } else {
+                Swal.fire({
+                    title: " TIDAK Berhasil Login",
+                    text: "Selamat Datang",
+                    icon: "warning",
+                    confirmButtonText: "ok"
+                })
             }
 
         })
@@ -109,3 +123,26 @@ export const loginActions = (values, event, history) => {
 
 //     dispatch(getUserInfo(userInfo.data.user));
 // };
+
+export const getUserInfoAction = () => {
+        return async(dispatch) => {
+            const url = 'http://localhost:8080/user/member';
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            };
+        
+            const userInfo = await axios.get(url, config);
+            console.log('user info', userInfo)
+            dispatch(getUserInfo(userInfo.data.user));
+        }
+    }
+
+export const userLogout = (history) => {
+   return dispatch => {
+       localStorage.removeItem('token');
+       dispatch(getLogout(null));
+       history.push('/');
+   } 
+};

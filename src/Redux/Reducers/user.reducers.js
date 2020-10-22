@@ -1,4 +1,4 @@
-import { REGISTER, LOGIN, GET_ERROR } from "../Actions/user.action";
+import { REGISTER, LOGIN, GET_ERROR, GET_USER_INFO, LOGOUT } from "../Actions/user.action";
 
 // check token
 const token = localStorage.getItem('token');
@@ -16,7 +16,7 @@ const initialState = token
       };
 
 // reducer user
-const user = (state = initialState, action) => {
+export default function user(state = initialState, action) {
     switch (action.type) {
         case REGISTER:
             return {
@@ -32,14 +32,17 @@ const user = (state = initialState, action) => {
                 ...state,
                 error: action.payload,
             };
-        // case GET_USER_INFO:
-        //     return {
-        //         ...state,
-        //         data: action.payload,
-        //     };
+        case GET_USER_INFO:
+            return {
+                ...state,
+                data: action.payload,
+            };
+        case LOGOUT: 
+            return {
+                isLogged: false,
+            }
         default:
             return state;
     }
 };
 
-export default user;
