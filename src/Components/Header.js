@@ -38,6 +38,11 @@ function Header() {
               <p className="title">About Us</p>
             </Link>
           </Typography>
+          <Typography>
+            <Link to="/contact" style={{ textDecoration: "none" }}>
+              <p className="title">Contact Us</p>
+            </Link>
+          </Typography>
           <div className={classes.root}>
             <Button variant="contained" color="secondary">
               <Link to="/login" style={{ textDecoration: "none" }}>

@@ -12,6 +12,7 @@ import Product from "./Pages/Product/Product";
 import About from "./Pages/About/About";
 import Login from "./Pages/user/Login";
 import Register from "./Pages/user/Register";
+import Contact from "./Pages/Contact/Contact";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/login">
             <Login />
