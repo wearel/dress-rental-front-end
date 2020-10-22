@@ -18,7 +18,7 @@ import { Button } from "@material-ui/core";
 import ButtonBase from "@material-ui/core/ButtonBase";
 
 import { getProductAction } from "../../Redux/Actions/product.action";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import "./Product.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -45,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
   text: {
     textAlign: "left",
   },
-  button :{
-    width: '120px'
+  button: {
+    width: "120px",
   },
 }));
 
@@ -111,14 +111,14 @@ function Product() {
                               Rp {item.price}
                             </Typography>
                           </Grid>
-                          <Link
-                            to="/booking"
-                            style={{ textDecoration: "none" }}
+                          <Button
+                            className={classes.button}
+                            variant="contained"
+                            color="secondary"
+                            onClick={() => handleClick(item.id)}
                           >
-                            <Button className={classes.button} variant="contained" color="secondary">
-                              Rent Now
-                            </Button>
-                          </Link>
+                            Rent Now
+                          </Button>
                         </Grid>
                       </Grid>
                     </Grid>

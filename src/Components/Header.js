@@ -51,11 +51,11 @@ function Header() {
               <p className="title">Home</p>
             </Link>
           </Typography>
-          <Typography>
-            <Link to="/modal" style={{ textDecoration: "none" }}>
-              <p className="title">Modal</p>
+          {/* <Typography>
+            <Link to="/detail-product/:id" style={{ textDecoration: "none" }}>
+              <p className="title">Detail</p>
             </Link>
-          </Typography>
+          </Typography> */}
           <Typography>
             <Link to="/product" style={{ textDecoration: "none" }}>
               <p className="title">Product</p>
@@ -66,22 +66,21 @@ function Header() {
               <p className="title">About Us</p>
             </Link>
           </Typography>
-          <div className={classes.root}
-             <Button variant="contained" color="secondary">
-              { dataUser.data === undefined && dataUser.data !== 0 ? 
-              ( 
-              <Link to="/login" style={{ textDecoration: "none", color: 'white' }}>
-              Login
-            </Link>
-            )
-              : (
-                <div onClick={() => logoutSuccess()}  style={{ textDecoration: "none" }}>
-                Logout
-              </div>
-              ) 
-            }
-            </Button> 
-
+          <div className={classes.root}>
+            <Button variant="contained" color="secondary">
+              {dataUser.data === undefined && dataUser.data !== 0 ? (
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  Login
+                </Link>
+              ) : (
+                <div
+                  onClick={() => logoutSuccess()}
+                  style={{ textDecoration: "none" }}
+                >
+                  Logout
+                </div>
+              )}
+            </Button>
             {/* <Button variant="contained" color="secondary">
               <Link to="/register" style={{ textDecoration: "none" }}>
                 Register
