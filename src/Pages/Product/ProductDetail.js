@@ -31,17 +31,15 @@ const useStyles = makeStyles({
 export default function MediaCard() {
   const classes = useStyles();
 
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
-  const dispatch = useDispatch()
-    const { id } = useParams();
+  useEffect(() => {
+    dispatch(getProductById(id));
+    // eslint-disable-next-line
+  }, []);
 
-    useEffect(() => {
-        dispatch(getProductById(id));
-        // eslint-disable-next-line
-    }, []);
-
-    const detailProduct = useSelector((state) => state.product.data);
-
+  const detailProduct = useSelector((state) => state.product.data);
 
   console.log("component detail product", detailProduct);
   return (
@@ -71,7 +69,7 @@ export default function MediaCard() {
                     color="textSecondary"
                     component="p"
                   >
-                   {detailProduct.description}
+                    {detailProduct.description}
                   </p>
                   <Divider />
                   <p className="text-title-detail">Price Per Day</p>
@@ -83,7 +81,6 @@ export default function MediaCard() {
                   <p className="vendor-category-detail">
                     By Handmade Javanese Lace — Wedding Dress
                   </p>
-                  
                 </CardContent>
               </CardActionArea>
               <Link to="/booking" style={{ textDecoration: "none" }}>
