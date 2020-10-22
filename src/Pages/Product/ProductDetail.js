@@ -43,7 +43,7 @@ export default function MediaCard() {
     }, []);
 
 
-    const detailProduct = useSelector((state) => state.getProductReducers.data);
+    const detailProduct = useSelector((state) => state.product.data);
 
     console.log("component detail product", detailProduct);
   return (

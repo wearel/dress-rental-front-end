@@ -142,7 +142,7 @@ export const getUserInfoAction = () => {
 export const userLogout = (history) => {
    return dispatch => {
        localStorage.removeItem('token');
-       dispatch(getLogout(null));
+       dispatch(getLogout());
        history.push('/');
    } 
 };

@@ -74,7 +74,7 @@ function Header() {
              <Button variant="contained" color="secondary">
               { dataUser.data === undefined && dataUser.data !== 0 ? 
               ( 
-              <Link to="/login" style={{ textDecoration: "none" }}>
+              <Link to="/login" style={{ textDecoration: "none", color: 'white' }}>
               Login
             </Link>
             )
