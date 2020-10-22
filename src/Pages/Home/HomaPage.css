@@ -1,6 +1,7 @@
 .cont-home {
+  display: flex;
+  flex-direction: row;
   background-color: #fed4d5;
-  max-width: 100%;
   padding-top: 100px;
   padding-left: 200px;
   padding-right: 200px;
@@ -9,32 +10,29 @@
 
 .title-text {
   font-family: Inter;
-  font-style: normal;
   font-weight: bold;
   font-size: 50px;
   line-height: 80px;
   text-align: left;
   color: #555555;
-  mix-blend-mode: normal;
+}
+
+.desc-text {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #555555;
+  text-align: left;
+}
+
+.btn {
+  text-align: left;
 }
 
 img {
   max-width: 100%;
 }
-
-.desc-text {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
-  color: #555555;
-  mix-blend-mode: normal;
-  text-align: left;
-}
-
 /* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -43,30 +41,25 @@ img {
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .cont-home {
+    padding-left: 25px;
+    padding-right: 25px;
+    flex-direction: column;
+  }
   .title-text {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 20px;
-    text-align: center;
-    color: #555555;
-    mix-blend-mode: normal;
+    font-size: 30px;
+    line-height: 40px;
+    max-width: 100%;
   }
   .desc-text {
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 18px;
-    display: flex;
-    color: #555555;
-    mix-blend-mode: normal;
-    text-align: center;
+    padding-bottom: 30px;
   }
 
   .btn {
     text-align: center;
+    padding-bottom: 30px;
   }
 }
 

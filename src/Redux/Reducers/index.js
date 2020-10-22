@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
+import  product  from "./product.reducers";
+import  user from "./user.reducers";
 
-import { getProductReducers } from "./product.reducers";
-import  user  from "./user.reducers";
-
-const rootReducers = combineReducers({ getProductReducers, user });
+const rootReducers = combineReducers({ 
+    product,
+    user 
+});
 
 export default rootReducers;

@@ -6,6 +6,8 @@ import { registerActions } from "../../Redux/Actions/user.action";
 // --------------- Style CSS ---------------
 import "../user/Register.css";
 import GambarRegister from "../../Assets/gambar-login-register.jpg";
+// import Axios from "axios";
+
 
 // --------------- material ui core component ---------------
 import Grid from "@material-ui/core/Grid";
@@ -29,9 +31,9 @@ function Register() {
   });
 
   const isLogged = useSelector((state) => state.user);
-  console.log("isLogged", isLogged);
+  console.log('isLogged', isLogged);
 
-  // --------------- handleChange form ---------------
+  // handleChange form
   const handleChange = (event) => {
     setRegister({
       ...register,
@@ -39,9 +41,9 @@ function Register() {
     });
   };
 
-  // --------------- code handle submit tanpa redux ---------------
   // const handleSubmit = (event) => {
   //   event.preventDefault();
+
   //   Axios.post("https://gaun-rental.herokuapp.com/register", register)
   //     .then((response) => alert(response.data.message))
   //     .catch((error) => console.log(error));
@@ -57,6 +59,7 @@ function Register() {
             >
               {/* --------------- section register --------------- */}
               <div style={{ height: 500, width: 400 }}>
+
                 {/* -------------- judul register --------------- */}
                 <h3 style={{
                   color: "#2e505e"
@@ -64,9 +67,10 @@ function Register() {
                 {/* -------------- form register -------------- */}
                 <form
                   onSubmit={(event) => {
+
                     dispatch(registerActions(register, event, history));
-                  }}
-                >
+                }}>
+                  
                   <div
                     style={{
                       display: "flex",

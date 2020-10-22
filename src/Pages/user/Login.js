@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
+
 import { loginActions } from "../../Redux/Actions/user.action";
 
 // ---------------- Style CSS ---------------
@@ -18,26 +19,30 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 // --------------- material ui icon ---------------
 import { AccountCircle, LockRounded } from "@material-ui/icons";
 
+// import Axios from "axios";
+
 function Login() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
   const history = useHistory();
-  // const user = useSelector((state) => state.user);
 
   const [login, setLogin] = useState({
     email: "",
     password: "",
   });
 
-  // const [error, setError] = useState(null);
+  
+  const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   // do stuff
-  //   if (user.error !== null) {
-  //     setError(user.error);
-  //   }
-  // }, [user]);
+  useEffect(() => {
+    // do stuff
+    if (user.error !== null) {
+      setError(user.error);
+    }
+  }, [user]);
 
-  // --------------- handleChange form ---------------
+  // handleChange form
+
   const handleChange = (event) => {
     setLogin({
       ...login,
@@ -49,9 +54,11 @@ function Login() {
   const handleSubmit = (event) => {
     dispatch(loginActions(login, event, history));
 
-    // if (user.error !== null) {
-    //   setError(user.error);
-    // }
+    if (user.error !== null) {
+      setError(user.error);
+    };
+
+
 
     // event.preventDefault();
 
