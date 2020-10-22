@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
-import {useParams} from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -20,19 +20,17 @@ import Dress from "../../Assets/dress-1.jpg";
 // Pages
 import GalleryProduct from "./GalleryProduct";
 
-import  {getProductById} from '../../Redux/Actions/product.action';
+import { getProductById } from "../../Redux/Actions/product.action";
 
 const useStyles = makeStyles({
   media: {
-    height: 540,
+    height: 340,
   },
 });
 
-
-
-
 export default function MediaCard() {
   const classes = useStyles();
+
 
   const dispatch = useDispatch()
     const { id } = useParams();
@@ -42,10 +40,10 @@ export default function MediaCard() {
         // eslint-disable-next-line
     }, []);
 
-
     const detailProduct = useSelector((state) => state.product.data);
 
-    console.log("component detail product", detailProduct);
+
+  console.log("component detail product", detailProduct);
   return (
     <Fragment>
       <div className="cont-product-detail">

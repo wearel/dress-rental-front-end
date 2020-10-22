@@ -18,6 +18,7 @@ import { Button } from "@material-ui/core";
 import ButtonBase from "@material-ui/core/ButtonBase";
 
 import { getProductAction } from "../../Redux/Actions/product.action";
+import Button from "@material-ui/core/Button";
 import "./Product.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -62,6 +63,7 @@ function Product() {
   const handleClick = (id) => {
     history.push(`/detail-product/${id}`);
   };
+
   const classes = useStyles();
 
   return (

@@ -1,7 +1,6 @@
-import React , {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-
 
 import { Link } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
@@ -12,8 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Logo from "../Assets/Logo.png";
 import "./Header.css";
 
-
-import {getUserInfoAction, userLogout} from  '../Redux/Actions/user.action';
+import { getUserInfoAction, userLogout } from "../Redux/Actions/user.action";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -28,22 +26,21 @@ function Header() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const dataUser = useSelector((state) => state.user)
-  console.log('data user', dataUser)
+  const dataUser = useSelector((state) => state.user);
+  console.log("data user", dataUser);
 
   useEffect(() => {
-    dispatch(getUserInfoAction())
-  },[dataUser])
+    dispatch(getUserInfoAction());
+  }, [dataUser]);
 
   const logoutSuccess = () => {
     console.log("logout");
     dispatch(userLogout(history));
 
     alert("logout");
-    console.log('slesai logoout', dataUser)
+    console.log("slesai logoout", dataUser);
   };
- 
-  
+
   return (
     <div className="cont-header">
       <AppBar>
@@ -55,8 +52,8 @@ function Header() {
             </Link>
           </Typography>
           <Typography>
-            <Link to="/detail" style={{ textDecoration: "none" }}>
-              <p className="title">Detail</p>
+            <Link to="/modal" style={{ textDecoration: "none" }}>
+              <p className="title">Modal</p>
             </Link>
           </Typography>
           <Typography>
@@ -69,8 +66,7 @@ function Header() {
               <p className="title">About Us</p>
             </Link>
           </Typography>
-          <div className={classes.root}>
-
+          <div className={classes.root}
              <Button variant="contained" color="secondary">
               { dataUser.data === undefined && dataUser.data !== 0 ? 
               ( 
@@ -85,6 +81,7 @@ function Header() {
               ) 
             }
             </Button> 
+
             {/* <Button variant="contained" color="secondary">
               <Link to="/register" style={{ textDecoration: "none" }}>
                 Register

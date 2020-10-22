@@ -1,39 +1,39 @@
 .cont-footer {
+  display: flex;
+  flex-direction: row;
   background-color: #f1a3ad;
   padding-top: 30px;
   padding-left: 200px;
   padding-right: 200px;
 }
 
+.cont-footer-dua {
+  width: 50%;
+}
+
 .text-footer-about {
   font-family: Inter;
-  font-style: normal;
   font-weight: 300;
   font-size: 18px;
   text-align: left;
   line-height: 28px;
   color: #ffffff;
-  mix-blend-mode: normal;
 }
 
 .text-footer-title {
   font-family: Inter;
-  font-style: normal;
   font-weight: 800;
   font-size: 18px;
   line-height: 28px;
   color: #ffffff;
-  mix-blend-mode: normal;
 }
 
 .text-footer-list {
   font-family: Inter;
-  font-style: normal;
   font-weight: 300;
   font-size: 18px;
   line-height: 28px;
   color: #ffffff;
-  mix-blend-mode: normal;
 }
 
 .cont-footer-social {
@@ -47,8 +47,8 @@
 }
 
 .pic {
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
   padding: 10px;
 }
 /* untuk responsive */
@@ -59,6 +59,26 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .cont-footer {
+    padding-left: 25px;
+    padding-right: 25px;
+    flex-direction: column;
+  }
+  .text-footer-about {
+    text-align: center;
+  }
+
+  .text-footer-title {
+    text-align: center;
+  }
+
+  .text-footer-list {
+    text-align: center;
+  }
+
+  .cont-footer-dua {
+    width: 100%;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */

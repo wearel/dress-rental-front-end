@@ -111,6 +111,7 @@ export const loginActions = (values, event, history) => {
 
 };
 
+
 // export const getUserInfoAction = () => async (dispatch) => {
 //     const url = "";
 //     const config = {
@@ -123,6 +124,7 @@ export const loginActions = (values, event, history) => {
 
 //     dispatch(getUserInfo(userInfo.data.user));
 // };
+
 
 export const getUserInfoAction = () => {
         return async(dispatch) => {
@@ -146,3 +148,4 @@ export const userLogout = (history) => {
        history.push('/');
    } 
 };
+
