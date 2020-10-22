@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
 // Foto
-import Foto1 from "../../../Assets/about-foto/about us 1.png";
+import Foto1 from "../../Assets/about us 1.png";
 // import Foto2 from "../../../Assets/about-foto/Gaun jawa 3.png";
 // import Foto3 from "../../../Assets/about-foto/Gaun jawa 4.png";
 // import Foto4 from "../../../Assets/about-foto/Gaun jawa 5.png";
