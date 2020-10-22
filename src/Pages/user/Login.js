@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
 import { loginActions } from "../../Redux/Actions/user.action";
 
 // ---------------- Style CSS ---------------
-import "../user/Login.css";
+import "./Login.css";
 import GambarLogin from "../../Assets/gambar-login.jpg";
 import Logo from "../../Assets/Logo.png";
 
@@ -31,7 +31,6 @@ function Login() {
     password: "",
   });
 
-  
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -56,9 +55,7 @@ function Login() {
 
     if (user.error !== null) {
       setError(user.error);
-    };
-
-
+    }
 
     // event.preventDefault();
 
@@ -76,10 +73,13 @@ function Login() {
     <div className="cont-login">
       <Grid container spacing={0} justify="center" style={{ marginTop: 130 }}>
         <Grid item>
-          <Paper className="paper-login" style={{ height: 500, width: 800, display: "flex" }}>
+          <Paper
+            className="paper-login"
+            style={{ height: 500, width: 800, display: "flex" }}
+          >
             {/* --------------- section gambar --------------- */}
             <div>
-              <img 
+              <img
                 className="gambar-login"
                 style={{
                   height: 500,
@@ -167,7 +167,10 @@ function Login() {
               <h6 style={{ marginBottom: 0, marginTop: 0, color: "#2e505e" }}>
                 Don't have an account ? please
                 <Button style={{ color: "#fia3ad" }}>
-                  <Link to="/register" style={{ textDecoration: "none", color: "#2e505e" }}>
+                  <Link
+                    to="/register"
+                    style={{ textDecoration: "none", color: "#2e505e" }}
+                  >
                     Register
                   </Link>
                 </Button>
@@ -175,7 +178,10 @@ function Login() {
               <h6 style={{ marginTop: 0, color: "#2e505e" }}>
                 More info ? please back to
                 <Button style={{ color: "#fia3ad" }}>
-                  <Link to="/" style={{ textDecoration: "none", color: "#2e505e" }}>
+                  <Link
+                    to="/"
+                    style={{ textDecoration: "none", color: "#2e505e" }}
+                  >
                     Home
                   </Link>
                 </Button>
