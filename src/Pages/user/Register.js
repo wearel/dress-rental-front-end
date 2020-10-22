@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { registerActions } from "../../Redux/Actions/user.action";
+// import Axios from "axios";
+import { registerActions } from '../../Redux/Actions/user.action';
 
-// --------------- Style CSS ---------------
+// Style CSS
 import "./Register.css";
 
 // --------------- material ui core component ---------------
@@ -28,9 +29,9 @@ function Register() {
   });
 
   const isLogged = useSelector((state) => state.user);
-  console.log("isLogged", isLogged);
+  console.log('isLogged', isLogged);
 
-  // --------------- handleChange form ---------------
+  // handleChange form
   const handleChange = (event) => {
     setRegister({
       ...register,
@@ -38,9 +39,9 @@ function Register() {
     });
   };
 
-  // --------------- code handle submit tanpa redux ---------------
   // const handleSubmit = (event) => {
   //   event.preventDefault();
+
   //   Axios.post("https://gaun-rental.herokuapp.com/register", register)
   //     .then((response) => alert(response.data.message))
   //     .catch((error) => console.log(error));
@@ -58,11 +59,10 @@ function Register() {
               <div style={{ height: 500, width: 400 }}>
                 <h3>Register</h3>
 
-                <form
-                  onSubmit={(event) => {
+                <form onSubmit={(event) => {
                     dispatch(registerActions(register, event, history));
-                  }}
-                >
+                }}>
+                  
                   <div
                     style={{
                       display: "flex",

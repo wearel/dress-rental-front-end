@@ -31,8 +31,15 @@ const useStyles = makeStyles({
 export default function MediaCard() {
   const classes = useStyles();
 
-  const dispatch = useDispatch();
-  const { id } = useParams();
+
+  const dispatch = useDispatch()
+    const { id } = useParams();
+
+    useEffect(() => {
+        dispatch(getProductById(id));
+        // eslint-disable-next-line
+    }, []);
+
 
   useEffect(() => {
     // eslint-disable-next-line
@@ -60,7 +67,7 @@ export default function MediaCard() {
             <Grid item xs={12} sm={6}>
               <CardActionArea>
                 <CardContent>
-                  <p className="text-title-detail"> Javanese Dress</p>
+                  <p className="text-title-detail"> {detailProduct.name}</p>
                   <Divider />
                   <p className="title-desc-detail">Product Description</p>
                   <p
@@ -69,24 +76,19 @@ export default function MediaCard() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
-                    iure, in harum distinctio veritatis explicabo sequi quo a
-                    quidem, ullam, laborum vero? Beatae quod, sint eveniet
-                    accusamus assumenda sed officiis? Lorem, ipsum dolor sit
-                    amet consectetur adipisicing elit. Veritatis omnis, velit,
-                    vel et illum facere impedit eaque nobis debitis ea porro
-                    natus minima dolore. Sunt dolorem numquam quis aliquam qui!
+                   {detailProduct.description}
                   </p>
                   <Divider />
                   <p className="text-title-detail">Price Per Day</p>
-                  <p className="text-desc-detail">Rp 15.000</p>
+                  <p className="text-desc-detail">Rp {detailProduct.price}</p>
                   <Divider />
                   <p className="vendor-category-detail">
-                    Category: Javanese Culture
+                    Category: {detailProduct.category}
                   </p>
                   <p className="vendor-category-detail">
                     By Handmade Javanese Lace — Wedding Dress
                   </p>
+                  
                 </CardContent>
               </CardActionArea>
               <Link to="/booking" style={{ textDecoration: "none" }}>

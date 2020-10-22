@@ -2,12 +2,12 @@ import {
   GET_PRODUCT_REQUEST,
   GET_PRODUCT_SUCCESS,
   GET_PRODUCT_FAILED,
-  GET_PRODUCT_DETAIL
+  GET_PRODUCT_DETAIL,
 } from "../Actions/product.action";
 
 const intialState = [];
 
-export function getProductReducers(state = intialState, action) {
+export default function product(state = intialState, action) {
   switch (action.type) {
     case GET_PRODUCT_REQUEST:
       return {
