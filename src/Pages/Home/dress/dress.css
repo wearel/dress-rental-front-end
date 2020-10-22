@@ -1,4 +1,6 @@
 .cont-dress {
+  display: flex;
+  flex-direction: row;
   padding-top: 100px;
   padding-left: 200px;
   padding-right: 200px;
@@ -27,8 +29,10 @@
   text-align: left;
 }
 
-.img-dress {
+.cont-dress-two {
   padding-top: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .img-dress-in {
@@ -51,6 +55,20 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .cont-dress {
+    padding: 25px;
+    flex-direction: column;
+  }
+
+  .title-dress {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .desc-dress {
+    font-size: 16px;
+    line-height: 18px;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */

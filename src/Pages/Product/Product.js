@@ -9,7 +9,7 @@ import "./Product.css";
 function Product() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const listProduct = useSelector((state) => state.getProductReducers.data);
+  const listProduct = useSelector((state) => state.product.data);
   console.log("Ini product di view", listProduct);
 
   useEffect(() => {

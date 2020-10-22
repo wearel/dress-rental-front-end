@@ -1,11 +1,11 @@
 .cont-testi {
   background-color: #fff9f9;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-left: 200px;
   padding-right: 200px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
-.text-testi {
+.title-testi {
   font-family: Inter;
   font-style: normal;
   font-weight: bold;
@@ -25,7 +25,7 @@
 .img-in {
   position: relative;
   height: 50px;
-  width: 100px;
+  /* width: 100px; */
   padding-right: 100px;
 }
 .img-in img {
@@ -42,6 +42,15 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .cont-testi {
+    padding-left: 25px;
+    padding-right: 25px;
+    flex-direction: column;
+  }
+
+  .img-in {
+    padding-right: 0px;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */

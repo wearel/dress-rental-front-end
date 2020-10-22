@@ -19,11 +19,11 @@ export default function product(state = intialState, action) {
         ...state,
         data: action.result,
       };
-    case GET_PRODUCT_DETAIL: 
-    return {
-      ...state,
-      data: action.result,
-    }
+    case GET_PRODUCT_DETAIL:
+      return {
+        ...state,
+        data: action.result,
+      };
     case GET_PRODUCT_FAILED:
       return {
         ...state,

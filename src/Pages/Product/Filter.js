@@ -1,6 +1,6 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+// import Autocomplete from "@material-ui/lab/Autocomplete";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import "./Filter.css";
@@ -31,7 +31,7 @@ function Filter() {
       <Grid container spacing={5}>
         {" "}
         <Grid item xs={6} sm={3}>
-          <Autocomplete
+          {/* <Autocomplete
             id="grouped-demo"
             options={options.sort(
               (a, b) => -b.firstLetter.localeCompare(a.firstLetter)
@@ -42,10 +42,10 @@ function Filter() {
             renderInput={(params) => (
               <TextField {...params} label="Categories" variant="outlined" />
             )}
-          />
+          /> */}
         </Grid>
         <Grid item xs={6} sm={3}>
-          <Autocomplete
+          {/* <Autocomplete
             id="grouped-demo"
             options={options.sort(
               (a, b) => -b.firstLetter.localeCompare(a.firstLetter)
@@ -56,7 +56,7 @@ function Filter() {
             renderInput={(params) => (
               <TextField {...params} label="Harga" variant="outlined" />
             )}
-          />
+          /> */}
         </Grid>
         <Grid item xs={6} sm={3}>
           <p></p>
