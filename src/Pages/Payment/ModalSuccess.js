@@ -1,12 +1,11 @@
 import React from "react";
-import "./ModalSuccess.css";
 
-function SuccessPage() {
+function ModalSuccess() {
   return (
-    <div className="cont-success">
-      <h1>Ini halaman modal succes page</h1>
+    <div>
+      <h1>Ini halaman Modal Success</h1>
     </div>
   );
 }
 
-export default SuccessPage;
+export default ModalSuccess;

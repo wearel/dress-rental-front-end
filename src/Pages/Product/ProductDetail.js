@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
-import {useParams} from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -20,32 +20,30 @@ import Dress from "../../Assets/dress-1.jpg";
 // Pages
 import GalleryProduct from "./GalleryProduct";
 
-import  {getProductById} from '../../Redux/Actions/product.action';
+import { getProductById } from "../../Redux/Actions/product.action";
 
 const useStyles = makeStyles({
   media: {
-    height: 540,
+    height: 340,
   },
 });
 
-
-
-
 export default function MediaCard() {
   const classes = useStyles();
+
 
   const dispatch = useDispatch()
     const { id } = useParams();
 
     useEffect(() => {
-      // eslint-disable-next-line
         dispatch(getProductById(id));
+        // eslint-disable-next-line
     }, []);
 
+    const detailProduct = useSelector((state) => state.product.data);
 
-    const detailProduct = useSelector((state) => state.getProductReducers.data);
 
-    console.log("component detail product", detailProduct);
+  console.log("component detail product", detailProduct);
   return (
     <Fragment>
       <div className="cont-product-detail">
@@ -64,7 +62,7 @@ export default function MediaCard() {
             <Grid item xs={12} sm={6}>
               <CardActionArea>
                 <CardContent>
-                  <p className="text-title-detail"> Javanese Dress</p>
+                  <p className="text-title-detail"> {detailProduct.name}</p>
                   <Divider />
                   <p className="title-desc-detail">Product Description</p>
                   <p
@@ -73,24 +71,19 @@ export default function MediaCard() {
                     color="textSecondary"
                     component="p"
                   >
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
-                    iure, in harum distinctio veritatis explicabo sequi quo a
-                    quidem, ullam, laborum vero? Beatae quod, sint eveniet
-                    accusamus assumenda sed officiis? Lorem, ipsum dolor sit
-                    amet consectetur adipisicing elit. Veritatis omnis, velit,
-                    vel et illum facere impedit eaque nobis debitis ea porro
-                    natus minima dolore. Sunt dolorem numquam quis aliquam qui!
+                   {detailProduct.description}
                   </p>
                   <Divider />
                   <p className="text-title-detail">Price Per Day</p>
-                  <p className="text-desc-detail">Rp 15.000</p>
+                  <p className="text-desc-detail">Rp {detailProduct.price}</p>
                   <Divider />
                   <p className="vendor-category-detail">
-                    Category: Javanese Culture
+                    Category: {detailProduct.category}
                   </p>
                   <p className="vendor-category-detail">
                     By Handmade Javanese Lace — Wedding Dress
                   </p>
+                  
                 </CardContent>
               </CardActionArea>
               <Link to="/booking" style={{ textDecoration: "none" }}>

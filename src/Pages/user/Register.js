@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { registerActions } from "../../Redux/Actions/user.action";
 
 // --------------- Style CSS ---------------
-import "./Register.css";
+import "../user/Register.css";
+import GambarRegister from "../../Assets/gambar-login-register.jpg";
+// import Axios from "axios";
+
 
 // --------------- material ui core component ---------------
 import Grid from "@material-ui/core/Grid";
@@ -28,9 +31,9 @@ function Register() {
   });
 
   const isLogged = useSelector((state) => state.user);
-  console.log("isLogged", isLogged);
+  console.log('isLogged', isLogged);
 
-  // --------------- handleChange form ---------------
+  // handleChange form
   const handleChange = (event) => {
     setRegister({
       ...register,
@@ -38,9 +41,9 @@ function Register() {
     });
   };
 
-  // --------------- code handle submit tanpa redux ---------------
   // const handleSubmit = (event) => {
   //   event.preventDefault();
+
   //   Axios.post("https://gaun-rental.herokuapp.com/register", register)
   //     .then((response) => alert(response.data.message))
   //     .catch((error) => console.log(error));
@@ -52,17 +55,22 @@ function Register() {
         <Grid container spacing={0} justify="center" style={{ marginTop: 130 }}>
           <Grid item>
             <Paper
-              style={{ height: 500, width: 800, padding: 20, display: "flex" }}
+              style={{ height: 500, width: 800,  display: "flex" }}
             >
-              {/* --------------- form register --------------- */}
+              {/* --------------- section register --------------- */}
               <div style={{ height: 500, width: 400 }}>
-                <h3>Register</h3>
 
+                {/* -------------- judul register --------------- */}
+                <h3 style={{
+                  color: "#2e505e"
+                }}>Register</h3>
+                {/* -------------- form register -------------- */}
                 <form
                   onSubmit={(event) => {
+
                     dispatch(registerActions(register, event, history));
-                  }}
-                >
+                }}>
+                  
                   <div
                     style={{
                       display: "flex",
@@ -73,7 +81,7 @@ function Register() {
                       marginRight: 70,
                     }}
                   >
-                    {/* --------------- input Full Name --------------- */}
+                    {/* --------------- input Full Name pada form --------------- */}
                     <TextField
                       label="Full Name"
                       margin="normal"
@@ -89,7 +97,7 @@ function Register() {
                       onChange={(event) => handleChange(event)}
                     />
 
-                    {/* --------------- input email --------------- */}
+                    {/* --------------- input email pada form --------------- */}
                     <TextField
                       label="E-mail"
                       margin="normal"
@@ -105,7 +113,7 @@ function Register() {
                       onChange={(event) => handleChange(event)}
                     />
 
-                    {/* --------------- input password --------------- */}
+                    {/* --------------- input password pada form --------------- */}
                     <TextField
                       label="Password"
                       margin="normal"
@@ -122,7 +130,7 @@ function Register() {
                       onChange={(event) => handleChange(event)}
                     />
 
-                    {/* --------------- input Phone Number --------------- */}
+                    {/* --------------- input Phone Number pada form --------------- */}
                     <TextField
                       label="Phone Number"
                       margin="normal"
@@ -147,14 +155,33 @@ function Register() {
                   </div>
                 </form>
 
-                <h6 style={{ marginTop: 0 }}>
+                <h6 style={{ marginTop: 0, marginBottom: 0, color: "#2e505e" }}>
                   Already have an account ? please
-                  <Button style={{ color: "#fia3ad" }}>login</Button>
+                  <Button style={{ color: "#fia3ad" }}>
+                    <Link to="/login" style={{ textDecoration: "none", color: "#2e505e" }}>
+                      Login
+                    </Link>
+                  </Button>
+                </h6>
+                <h6 style={{ marginTop: 0, color: "#2e505e" }}>
+                  More info ? please back to
+                  <Button style={{ color: "#fia3ad" }}>
+                    <Link to="/" style={{ textDecoration: "none", color: "#2e505e" }}>
+                      Home
+                    </Link>
+                  </Button>
                 </h6>
               </div>
 
               {/* --------------- section gambar --------------- */}
-              <div></div>
+              <div>
+              <img 
+              style={{
+                height:500,
+                width:400,
+              }}
+              src={GambarRegister} alt="gambar register" />
+              </div>
             </Paper>
           </Grid>
         </Grid>

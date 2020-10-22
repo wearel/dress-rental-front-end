@@ -14,6 +14,7 @@ import Login from "./Pages/user/Login";
 import Register from "./Pages/user/Register";
 import Detail from "./Pages/Product/ProductDetail";
 import Booking from "./Pages/Payment/Booking";
+import Modal from "./Pages/Payment/ModalSuccess";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/booking">
             <Booking />
+          </Route>
+          <Route path="/modal">
+            <Modal />
           </Route>
           <Route path="/about">
             <About />
