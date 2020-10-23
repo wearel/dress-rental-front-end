@@ -15,14 +15,11 @@ function Footer() {
         <div className="cont-footer-dua">
           <img src={Logo} alt="logo" />
           <p className="text-footer-about">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            eos explicabo fugiat, vitae eveniet cum consequatur, ab neque, vel
-            sed quae fugit culpa beatae a quos molestias repellendus laudantium.
-            Perspiciatis!
+            Browse the many inspirations for your wedding on Wearel and get
+            connected directly to our best dresses. Set your own inspiration
+            with the boards we have provided.
           </p>
-          <p className="text-footer-about">
-            ©2020 Thousand Sunny. All rights reserved
-          </p>
+          <p className="text-footer-about">©2020 Wearel. All rights reserved</p>
         </div>
         {/* Dua */}
         <div className="cont-footer-dua">

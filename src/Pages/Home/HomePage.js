@@ -14,10 +14,9 @@ function HomePage() {
         <div>
           <p className="title-text">Find Your Best Dress For Wedding</p>
           <p className="desc-text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
-            dolorum ullam maiores blanditiis earum aliquid, culpa ad modi minima
-            numquam dolores corporis hic. Possimus repellat impedit, soluta
-            quisquam ipsum at.
+            Browse the many inspirations for your wedding on Wearel and get
+            connected directly to our best dresses. Set your own inspiration
+            with the boards we have provided.
           </p>
           <div className="btn">
             <Link to="/product" style={{ textDecoration: "none" }}>

@@ -12,9 +12,11 @@ import Product from "./Pages/Product/Product";
 import About from "./Pages/About/About";
 import Login from "./Pages/user/Login";
 import Register from "./Pages/user/Register";
+import Contact from "./Pages/Contact/Contact";
 import Detail from "./Pages/Product/ProductDetail";
 import Booking from "./Pages/Payment/Booking";
 import Modal from "./Pages/Payment/ModalSuccess";
+
 
 function App() {
   return (
@@ -39,6 +41,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/login">
             <Login />
