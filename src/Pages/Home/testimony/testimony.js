@@ -12,7 +12,7 @@ function testimony() {
     <div className="cont-testi">
       <h1>How Our customer say</h1>
       <Slide />
-      <p className="text-testi">As Seen On</p>
+      <p className="title-testi">As Seen On</p>
       <div className="cont-img">
         <div className="cont-seen">
           <img className="img-in" src={impactByte} alt="impactbyte" />

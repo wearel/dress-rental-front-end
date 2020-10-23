@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -8,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Logo from "../Assets/Logo.png";
 import "./Header.css";
 
+import { getUserInfoAction, userLogout } from "../Redux/Actions/user.action";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -16,8 +20,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 function Header() {
   const classes = useStyles();
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const dataUser = useSelector((state) => state.user);
+  console.log("data user", dataUser);
+
+  useEffect(() => {
+    dispatch(getUserInfoAction());
+  }, [dataUser]);
+
+  const logoutSuccess = () => {
+    console.log("logout");
+    dispatch(userLogout(history));
+
+    alert("logout");
+    console.log("slesai logoout", dataUser);
+  };
+
   return (
     <div className="cont-header">
       <AppBar>
@@ -28,6 +53,11 @@ function Header() {
               <p className="title">Home</p>
             </Link>
           </Typography>
+          {/* <Typography>
+            <Link to="/detail-product/:id" style={{ textDecoration: "none" }}>
+              <p className="title">Detail</p>
+            </Link>
+          </Typography> */}
           <Typography>
             <Link to="/product" style={{ textDecoration: "none" }}>
               <p className="title">Product</p>
@@ -45,15 +75,24 @@ function Header() {
           </Typography>
           <div className={classes.root}>
             <Button variant="contained" color="secondary">
-              <Link to="/login" style={{ textDecoration: "none" }}>
-                Login
-              </Link>
+              {dataUser.data === undefined && dataUser.data !== 0 ? (
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  Login
+                </Link>
+              ) : (
+                <div
+                  onClick={() => logoutSuccess()}
+                  style={{ textDecoration: "none" }}
+                >
+                  Logout
+                </div>
+              )}
             </Button>
-            <Button variant="contained" color="secondary">
+            {/* <Button variant="contained" color="secondary">
               <Link to="/register" style={{ textDecoration: "none" }}>
                 Register
               </Link>
-            </Button>
+            </Button> */}
           </div>
         </Toolbar>
       </AppBar>

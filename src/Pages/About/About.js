@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
-import Foto from "./Foto/Foto";
+import Foto from "./Foto";
 
 export default function About() {
   return (
