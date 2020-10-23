@@ -80,6 +80,10 @@ input[type="submit"]:hover {
     width: 100%;
     margin-top: 0;
   }
+
+  .cont-booking {
+    padding: 0px;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */

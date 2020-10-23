@@ -2,12 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-
-// Foto
 import Foto1 from "../../Assets/about us 1.png";
-// import Foto2 from "../../../Assets/about-foto/Gaun jawa 3.png";
-// import Foto3 from "../../../Assets/about-foto/Gaun jawa 4.png";
-// import Foto4 from "../../../Assets/about-foto/Gaun jawa 5.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +37,7 @@ export default function Foto() {
   return (
     <div className="root">
       <Grid container style={{ marginLeft: "3rem" }}>
+        {/* Gambar 1 */}
         <Grid sm={6}>
           <Grid
             item
@@ -52,17 +48,6 @@ export default function Foto() {
           >
             <img src={Foto1} alt="gaun jawa 1" />
           </Grid>
-          {/* <Grid container spacing={2} className={classes.Grid}>
-            <Grid item xs={6} sm={3}>
-              <img src={Foto2} alt="gaun jawa 2" />
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <img src={Foto3} alt="gaun jawa 3" />
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <img src={Foto4} alt="gaun jawa 4" />
-            </Grid>
-          </Grid> */}
         </Grid>
         <Grid
           sm={4}
@@ -72,6 +57,7 @@ export default function Foto() {
         >
           <Grid spacing={2}>
             <Grid style={{ textAlign: "left" }}>
+              {/* Teks 1 */}
               <Typography
                 gutterBottom
                 variant="subtitle1"
@@ -80,6 +66,8 @@ export default function Foto() {
                 A few words about our <br />
                 mission and company
               </Typography>
+
+              {/* Teks 2 */}
               <Typography
                 variant="body2"
                 gutterBottom
@@ -91,6 +79,8 @@ export default function Foto() {
                 Buddha is made of green jade, suprisingly not of emerald <br />
                 clothed in gold is approximately 45 cm tall.
               </Typography>
+
+              {/* Teks 3 */}
               <Typography
                 variant="body2"
                 className={classes.itemGrid2}

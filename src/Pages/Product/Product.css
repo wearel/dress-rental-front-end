@@ -47,6 +47,11 @@
   color: #555555;
 }
 
+.load-product {
+  width: 50%;
+  margin: 0 auto;
+}
+
 /* untuk responsive */
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -55,6 +60,12 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px) {
+  .cont-product {
+    padding-left: 60px;
+    padding-right: 20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */

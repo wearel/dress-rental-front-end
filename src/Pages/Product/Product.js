@@ -1,24 +1,17 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import Filter from "./Filter";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
-import Container from "@material-ui/core/Container";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 import ButtonBase from "@material-ui/core/ButtonBase";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { getProductAction } from "../../Redux/Actions/product.action";
-// import Button from "@material-ui/core/Button";
 import "./Product.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -67,7 +60,7 @@ function Product() {
   const classes = useStyles();
 
   return (
-    <>
+    <div className="cont-product">
       <div className={classes.root}>
         {/* <Filter /> */}
         <Grid container className={classes.container} spacing={3}>
@@ -127,11 +120,14 @@ function Product() {
               </div>
             ))
           ) : (
-            <p>Loading</p>
+            <div className="load-product">
+              <CircularProgress />
+              <CircularProgress color="secondary" />
+            </div>
           )}
         </Grid>
       </div>
-    </>
+    </div>
   );
 }
 
