@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import Filter from "./Filter";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -45,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 function Product() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const listProduct = useSelector((state) => state.product.data);
+  const listProduct = useSelector((state) => state.product);
   console.log("Ini product di view", listProduct);
 
   useEffect(() => {
@@ -64,7 +63,7 @@ function Product() {
         <h1 className="name">Find a Lot of Inspiration Here</h1>
         {/* <Filter /> */}
         <Grid container className={classes.container} spacing={3}>
-          {listProduct !== undefined && listProduct.length > 0 ? (
+          {listProduct.products > 0 ? (
             listProduct.map((item, index) => (
               <div key={index}>
                 <Grid item xs={6} sm={3}>
