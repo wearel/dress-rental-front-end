@@ -1,33 +1,54 @@
 import {
-  GET_PRODUCT_REQUEST,
-  GET_PRODUCT_SUCCESS,
-  GET_PRODUCT_FAILED,
-  GET_PRODUCT_DETAIL,
+  GET_ALL_PRODUCTS_REQUEST,
+  GET_ALL_PRODUCTS_SUCCESS,
+  GET_ALL_PRODUCTS_FAILED,
+  GET_PRODUCT_DETAILS_REQUEST,
+  GET_PRODUCT_DETAILS_SUCCESS,
+  GET_PRODUCT_DETAILS_FAILED,
 } from "../Actions/product.action";
 
-const intialState = [];
+const intialState = {
+  products: [],
+  productDetails: {},
+  loading: false,
+  error: null,
+};
 
 export default function product(state = intialState, action) {
   switch (action.type) {
-    case GET_PRODUCT_REQUEST:
+    case GET_ALL_PRODUCTS_REQUEST:
       return {
         ...state,
-        data: action.payload,
+        loading: true,
       };
-    case GET_PRODUCT_SUCCESS:
+    case GET_ALL_PRODUCTS_SUCCESS:
       return {
         ...state,
-        data: action.result,
+        loading: false,
+        products: action.payload,
       };
-    case GET_PRODUCT_DETAIL:
+    case GET_ALL_PRODUCTS_FAILED:
       return {
         ...state,
-        data: action.result,
+        loading: false,
+        error: action.payload,
       };
-    case GET_PRODUCT_FAILED:
+    case GET_PRODUCT_DETAILS_REQUEST:
       return {
         ...state,
-        error: action.error,
+        loading: true,
+      };
+    case GET_PRODUCT_DETAILS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        productDetails: action.payload,
+      };
+    case GET_PRODUCT_DETAILS_FAILED:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
       };
     default:
       return state;

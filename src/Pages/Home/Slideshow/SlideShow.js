@@ -7,13 +7,15 @@ import CarouselSlide from "../Slideshow/SlideCarousel";
 // Import constanta.js
 import { SLIDE_INFO } from "../Slideshow/SlideData";
 // Import react icons
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 // Import slide dari material UI
 import Slide from "@material-ui/core/Slide";
 
 function Arrow(props) {
   const { direction, clickFunction } = props;
-  const icon = direction === "left" ? <FaChevronLeft /> : <FaChevronRight />;
+  const icon =
+    direction === "left" ? <ChevronLeftIcon /> : <ChevronRightIcon />;
 
   return <div onClick={clickFunction}>{icon}</div>;
 }
