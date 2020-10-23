@@ -10,7 +10,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import CircularProgress from "@material-ui/core/CircularProgress";
-
 import { getProductAction } from "../../Redux/Actions/product.action";
 import "./Product.css";
 
@@ -62,6 +61,7 @@ function Product() {
   return (
     <div className="cont-product">
       <div className={classes.root}>
+        <h1 className="name">Find a Lot of Inspiration Here</h1>
         {/* <Filter /> */}
         <Grid container className={classes.container} spacing={3}>
           {listProduct !== undefined && listProduct.length > 0 ? (
