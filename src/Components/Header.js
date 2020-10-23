@@ -20,8 +20,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 function Header() {
   const classes = useStyles();
 
@@ -33,11 +31,13 @@ function Header() {
 
   useEffect(() => {
     dispatch(getUserInfoAction());
-  }, [dataUser]);
+    // eslint-disable-next-line
+  }, [dispatch, dataUser]);
 
   const logoutSuccess = () => {
     console.log("logout");
     dispatch(userLogout(history));
+    localStorage.removeItem("token");
 
     alert("logout");
     console.log("slesai logoout", dataUser);
@@ -75,7 +75,7 @@ function Header() {
           </Typography>
           <div className={classes.root}>
             <Button variant="contained" color="secondary">
-              {dataUser.data === undefined && dataUser.data !== 0 ? (
+              {!localStorage.getItem("token") ? (
                 <Link to="/login" style={{ textDecoration: "none" }}>
                   Login
                 </Link>

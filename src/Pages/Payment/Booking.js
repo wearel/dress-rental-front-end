@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
+import { useDispatch, useSelector } from "react-redux";
 import "./Booking.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -12,7 +13,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function FullWidthGrid() {
+  const cart = useSelector((state) => state.cart);
+  const { products } = cart;
+  const dispatch = useDispatch();
   const classes = useStyles();
+
+  console.log(products);
 
   return (
     <Fragment>
@@ -23,20 +29,20 @@ export default function FullWidthGrid() {
               <div className="cont-card-booking">
                 <h2>List Product</h2>
                 <div className="row">
-                  <div className="col-25">
-                    <p>Javanese Dress</p>
-                  </div>
-                  <div className="col-75">
-                    <p>Rp 20.000.000</p>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-25">
-                    <p>Sundanese Dress</p>
-                  </div>
-                  <div className="col-75">
-                    <p>Rp 15.000.000</p>
-                  </div>
+                  {products.length === 0 ? (
+                    <h3>Theres no item in your cart</h3>
+                  ) : (
+                    products.map((product) => (
+                      <div className="row">
+                        <div className="col-25">
+                          <p>{product.name}</p>
+                        </div>
+                        <div className="col-75">
+                          <p>{product.price}</p>
+                        </div>
+                      </div>
+                    ))
+                  )}
                 </div>
                 <Divider />
                 <div className="row">
@@ -130,9 +136,6 @@ export default function FullWidthGrid() {
                       placeholder="Enter Your Address"
                     ></textarea>
                   </div>
-                </div>
-                <div className="row">
-                  <input type="Submit" value="Submit" />
                 </div>
               </div>
             </Grid>

@@ -1,8 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import { useDispatch, useSelector } from "react-redux";
-
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -13,10 +11,9 @@ import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../Redux/Actions/cart.action";
 import "./ProductDetail.css";
 
-// Assets
-import Dress from "../../Assets/dress-1.jpg";
 // Pages
 import GalleryProduct from "./GalleryProduct";
 
@@ -39,7 +36,12 @@ export default function MediaCard() {
     // eslint-disable-next-line
   }, []);
 
-  const detailProduct = useSelector((state) => state.product.data);
+  const detailProduct = useSelector((state) => state.product);
+  const { productDetails } = detailProduct;
+
+  const rentHandler = (product) => {
+    dispatch(addToCart(product));
+  };
 
   console.log("component detail product", detailProduct);
   return (
@@ -51,7 +53,7 @@ export default function MediaCard() {
               <CardActionArea className="test">
                 <CardMedia
                   className={classes.media}
-                  image={Dress}
+                  image={productDetails.imageId}
                   title="Contemplative Reptile"
                 />
                 <GalleryProduct />
@@ -60,7 +62,7 @@ export default function MediaCard() {
             <Grid item xs={12} sm={6}>
               <CardActionArea>
                 <CardContent>
-                  <p className="text-title-detail"> {detailProduct.name}</p>
+                  <p className="text-title-detail"> {productDetails.name}</p>
                   <Divider />
                   <p className="title-desc-detail">Product Description</p>
                   <p
@@ -69,14 +71,14 @@ export default function MediaCard() {
                     color="textSecondary"
                     component="p"
                   >
-                    {detailProduct.description}
+                    {productDetails.description}
                   </p>
                   <Divider />
                   <p className="text-title-detail">Price Per Day</p>
-                  <p className="text-desc-detail">Rp {detailProduct.price}</p>
+                  <p className="text-desc-detail">Rp {productDetails.price}</p>
                   <Divider />
                   <p className="vendor-category-detail">
-                    Category: {detailProduct.category}
+                    Category: {productDetails.category}
                   </p>
                   <p className="vendor-category-detail">
                     By Handmade Javanese Lace — Wedding Dress
@@ -84,7 +86,11 @@ export default function MediaCard() {
                 </CardContent>
               </CardActionArea>
               <Link to="/booking" style={{ textDecoration: "none" }}>
-                <Button variant="contained" color="secondary">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => rentHandler(productDetails)}
+                >
                   Rent Now
                 </Button>
               </Link>

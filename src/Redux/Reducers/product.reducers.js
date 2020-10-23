@@ -42,7 +42,7 @@ export default function product(state = intialState, action) {
       return {
         ...state,
         loading: false,
-        products: action.payload,
+        productDetails: action.payload,
       };
     case GET_PRODUCT_DETAILS_FAILED:
       return {
