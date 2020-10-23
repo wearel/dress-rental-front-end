@@ -2,19 +2,11 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMobile,
-  faEnvelope,
-  faMapMarked,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
-
-// Foto
 import Foto1 from "../../../Assets/contact/workspace.jpg";
-// import Foto2 from "../../../Assets/about-foto/Gaun jawa 3.png";
-// import Foto3 from "../../../Assets/about-foto/Gaun jawa 4.png";
-// import Foto4 from "../../../Assets/about-foto/Gaun jawa 5.png";
+import BusinessIcon from "@material-ui/icons/Business";
+import EmailIcon from "@material-ui/icons/Email";
+import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
+import ContactsIcon from "@material-ui/icons/Contacts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,17 +51,6 @@ export default function Item() {
           >
             <img src={Foto1} alt="gaun jawa 1" />
           </Grid>
-          {/* <Grid container spacing={2} className={classes.Grid}>
-            <Grid item xs={6} sm={3}>
-              <img src={Foto2} alt="gaun jawa 2" />
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <img src={Foto3} alt="gaun jawa 3" />
-            </Grid>
-            <Grid item xs={6} sm={3}>
-              <img src={Foto4} alt="gaun jawa 4" />
-            </Grid>
-          </Grid> */}
         </Grid>
         <Grid
           sm={4}
@@ -85,10 +66,7 @@ export default function Item() {
                 className={classes.itemGrid3}
                 style={{ marginTop: "3rem" }}
               >
-                <FontAwesomeIcon
-                  icon={faMapMarked}
-                  className={classes.itemGrid}
-                />
+                <BusinessIcon />
                 &nbsp; Building Office 3 Jakarta, Indonesia
               </Typography>
               <Typography
@@ -97,10 +75,7 @@ export default function Item() {
                 className={classes.itemGrid3}
                 style={{ marginTop: "2rem" }}
               >
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  className={classes.itemGrid}
-                />
+                <EmailIcon />
                 &nbsp; Wearel@gmail.com
               </Typography>
               <Typography
@@ -108,7 +83,7 @@ export default function Item() {
                 className={classes.itemGrid3}
                 style={{ marginTop: "2rem" }}
               >
-                <FontAwesomeIcon icon={faMobile} className={classes.itemGrid} />
+                <ContactPhoneIcon />
                 &nbsp; +62858489433
               </Typography>
               <Typography
@@ -116,7 +91,7 @@ export default function Item() {
                 className={classes.itemGrid3}
                 style={{ marginTop: "2rem" }}
               >
-                <FontAwesomeIcon icon={faPhone} className={classes.itemGrid} />
+                <ContactsIcon />
                 &nbsp; (0286) 394843
               </Typography>
             </Grid>
