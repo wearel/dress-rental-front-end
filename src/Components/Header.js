@@ -61,12 +61,12 @@ function Header() {
           </Typography>
           <Typography>
             <Link to="/about" style={{ textDecoration: "none" }}>
-              <p className="title">About Us</p>
+              <p className="title">About</p>
             </Link>
           </Typography>
           <Typography>
             <Link to="/contact" style={{ textDecoration: "none" }}>
-              <p className="title">Contact Us</p>
+              <p className="title">Contact</p>
             </Link>
           </Typography>
           <Typography>
@@ -75,9 +75,11 @@ function Header() {
             </Link>
           </Typography>
           <Typography>
-            <Link to="/cart" style={{ textDecoration: "none" }}>
-              My Cart
+          <Link to="/cart" style={{ textDecoration: "none" }}>
             </Link>
+            {/* <Link to="/cart" style={{ textDecoration: "none", width: '300px' }}>
+              My Cart
+            </Link> */}
           </Typography>
           <div className={classes.root}>
             <Button variant="contained" color="secondary">

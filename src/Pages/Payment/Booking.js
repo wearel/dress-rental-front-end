@@ -14,11 +14,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FullWidthGrid() {
   const cart = useSelector((state) => state.cart);
+  const total = useSelector((state) => state.totalBelanja);
+  console.log('total', total)
   const { products } = cart;
   const dispatch = useDispatch();
   const classes = useStyles();
 
   console.log(products);
+  const subTotal = products.reduce((x, y) => {
+    return (x + y.price)
+  }, 0)
 
   return (
     <Fragment>
@@ -35,7 +40,7 @@ export default function FullWidthGrid() {
                     products.map((product) => (
                       <div className="row">
                         <div className="col-25">
-                          <p>{product.name}</p>
+                          <p>{product.nameProduct}</p>
                         </div>
                         <div className="col-75">
                           <p>{product.price}</p>
@@ -49,9 +54,12 @@ export default function FullWidthGrid() {
                   <div className="col-25">
                     <p>Total Price</p>
                   </div>
-                  <div className="col-75">
-                    <p>Rp 35.000.000</p>
+                  {products.length !== 0 && (
+                    <div className="col-75">
+                    <p>Rp {products.reduce((x, y) => x + y.price, 0)}</p>
                   </div>
+                  )}
+                  
                 </div>
               </div>
               <Divider />
@@ -144,11 +152,13 @@ export default function FullWidthGrid() {
                 <h2>Total Payment</h2>
                 <div className="row">
                   <div className="col-25">
-                    <p>SubTotal</p>
+                  <p>SubTotal</p>
                   </div>
-                  <div className="col-75">
-                    <p>Rp 35.000.000</p>
+                  {products.length !== 0 && (
+                    <div className="col-75">
+                    <p>Rp {products.reduce((x, y) => x + y.price, 0)}</p>
                   </div>
+                  )}
                 </div>
                 <div className="row">
                   <div className="col-25">
@@ -164,7 +174,7 @@ export default function FullWidthGrid() {
                     <p>Total Payment</p>
                   </div>
                   <div className="col-75">
-                    <p>Rp 35.035.000</p>
+                    <p>Rp {subTotal + 35000}</p>
                   </div>
                 </div>
                 <Button variant="contained" color="secondary" disableElevation>
