@@ -12,7 +12,7 @@ import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../Redux/Actions/cart.action";
-import swal from "sweetalert";
+// import swal from "sweetalert";
 import "./ProductDetail.css";
 
 // Pages
@@ -41,11 +41,11 @@ export default function MediaCard() {
 
   function handleClick(e) {
     dispatch(addToCart(e));
-    swal({
-      title: "Produk berhasil masuk ke keranjang belanja!",
-      icon: "success",
-      button: "Mantap!",
-    });
+    // swal({
+    //   title: "Produk berhasil masuk ke keranjang belanja!",
+    //   icon: "success",
+    //   button: "Mantap!",
+    // });
   }
   const rentHandler = (product) => {
     dispatch(addToCart(product));
@@ -97,7 +97,8 @@ export default function MediaCard() {
                   </p>
                 </CardContent>
               </CardActionArea>
-              <Link to="/booking" style={{ textDecoration: "none" }}>
+              {!localStorage.getItem('token') ? (
+                <Link  to="/login" style={{ textDecoration: "none" }}>
                 <Button
                   variant="contained"
                   color="secondary"
@@ -106,6 +107,18 @@ export default function MediaCard() {
                   Rent Now
                 </Button>
               </Link>
+              ) : (
+              <Link  to="/booking" style={{ textDecoration: "none" }}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => rentHandler(productDetails)}
+                >
+                  Rent Now
+                </Button>
+              </Link>
+              )}
+              
               <Button
                 onClick={() => handleClick(productDetails)}
                 variant="contained"

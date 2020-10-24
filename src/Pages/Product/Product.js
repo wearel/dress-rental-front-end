@@ -80,7 +80,7 @@ function Product() {
                           <img
                             className={classes.img}
                             alt="complex"
-                            onClick={() => handleClick(product.id)}
+                            onClick={() => handleClick(product._id)}
                             src={`${product.imgUrl}`}
                           />
                         </ButtonBase>
@@ -101,7 +101,7 @@ function Product() {
                             <Typography
                               variant="body2"
                               gutterBottom
-                              onClick={() => handleClick(product.id)}
+                              onClick={() => handleClick(product._id)}
                             >
                               {product.nameProduct}
                             </Typography>
@@ -113,7 +113,7 @@ function Product() {
                             className={classes.button}
                             variant="contained"
                             color="secondary"
-                            onClick={() => handleClick(product.id)}
+                            onClick={() => handleClick(product._id)}
                           >
                             See Details
                           </Button>
