@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-// import Filter from './Filter';
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Grid from "@material-ui/core/Grid";
@@ -46,6 +45,7 @@ function Product() {
   const history = useHistory();
   const listProduct = useSelector((state) => state.product);
   const { products, loading, error } = listProduct;
+  console.log("Ini Product di view", listProduct);
 
   useEffect(() => {
     dispatch(getProductAction());
@@ -81,7 +81,7 @@ function Product() {
                             className={classes.img}
                             alt="complex"
                             onClick={() => handleClick(product.id)}
-                            src={`${product.imageId}`}
+                            src={`${product.imgUrl}`}
                           />
                         </ButtonBase>
                       </Grid>
@@ -95,15 +95,15 @@ function Product() {
                           spacing={2}
                         >
                           <Grid item xs>
-                            <Typography gutterBottom variant="subtitle1">
-                              {product.category}
-                            </Typography>
+                            {/* <Typography gutterBottom variant="subtitle1">
+                              {product.categoryId}
+                            </Typography> */}
                             <Typography
                               variant="body2"
                               gutterBottom
                               onClick={() => handleClick(product.id)}
                             >
-                              {product.name}
+                              {product.nameProduct}
                             </Typography>
                             <Typography variant="body2" gutterBottom>
                               Rp {product.price}
@@ -126,70 +126,6 @@ function Product() {
             ))}
           </Grid>
         )}
-        {/* <Filter /> */}
-        {/* <Grid container className={classes.container} spacing={3}>
-          {listProduct.products > 0 ? (
-            listProduct.map((item, index) => (
-              <div key={index}>
-                <Grid item xs={6} sm={3}>
-                  <Paper className={classes.paper}>
-                    <Grid container spacing={2}>
-                      <Grid item>
-                        <ButtonBase className={classes.image}>
-                          <img
-                            className={classes.img}
-                            alt="complex"
-                            onClick={() => handleClick(item.id)}
-                            src={`${item.imageId}`}
-                          />
-                        </ButtonBase>
-                      </Grid>
-                      <Grid item xs={12} sm container>
-                        <Grid
-                          item
-                          xs
-                          container
-                          className={classes.text}
-                          direction="column"
-                          spacing={2}
-                        >
-                          <Grid item xs>
-                            <Typography gutterBottom variant="subtitle1">
-                              {item.category}
-                            </Typography>
-                            <Typography
-                              variant="body2"
-                              gutterBottom
-                              onClick={() => handleClick(item.id)}
-                            >
-                              {item.name}
-                            </Typography>
-                            <Typography variant="body2" gutterBottom>
-                              Rp {item.price}
-                            </Typography>
-                          </Grid>
-                          <Button
-                            className={classes.button}
-                            variant="contained"
-                            color="secondary"
-                            onClick={() => handleClick(item.id)}
-                          >
-                            Rent Now
-                          </Button>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Paper>
-                </Grid>
-              </div>
-            ))
-          ) : (
-            <div className="load-product">
-              <CircularProgress />
-              <CircularProgress color="secondary" />
-            </div>
-          )}
-        </Grid> */}
       </div>
     </div>
   );

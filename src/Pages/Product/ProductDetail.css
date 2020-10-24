@@ -41,8 +41,9 @@
   text-align: left;
 }
 
-.test {
-  background-color: yellow;
+.add-to-cart {
+  display: flex;
+  flex-direction: column;
 }
 /* untuk responsive */
 
