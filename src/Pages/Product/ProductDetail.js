@@ -12,11 +12,11 @@ import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../Redux/Actions/cart.action";
+import swal from "sweetalert";
 import "./ProductDetail.css";
 
 // Pages
 import GalleryProduct from "./GalleryProduct";
-
 import { getProductById } from "../../Redux/Actions/product.action";
 
 const useStyles = makeStyles({
@@ -39,18 +39,27 @@ export default function MediaCard() {
   const detailProduct = useSelector((state) => state.product);
   const { productDetails } = detailProduct;
 
+  function handleClick(e) {
+    dispatch(addToCart(e));
+    swal({
+      title: "Produk berhasil masuk ke keranjang belanja!",
+      icon: "success",
+      button: "Mantap!",
+    });
+  }
   const rentHandler = (product) => {
     dispatch(addToCart(product));
   };
 
   console.log("component detail product", detailProduct);
+
   return (
     <Fragment>
       <div className="cont-product-detail">
         <Card>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
-              <CardActionArea className="test">
+              <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image={productDetails.imageId}
@@ -94,6 +103,13 @@ export default function MediaCard() {
                   Rent Now
                 </Button>
               </Link>
+              <Button
+                onClick={() => handleClick(productDetails)}
+                variant="contained"
+                s
+              >
+                Add To cart
+              </Button>
               <CardActions>
                 <Button size="small" color="primary">
                   Share
