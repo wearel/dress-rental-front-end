@@ -62,7 +62,7 @@ export default function MediaCard() {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image={productDetails.imageId}
+                  image={productDetails.imgUrl}
                   title="Contemplative Reptile"
                 />
                 <GalleryProduct />
@@ -71,7 +71,10 @@ export default function MediaCard() {
             <Grid item xs={12} sm={6}>
               <CardActionArea>
                 <CardContent>
-                  <p className="text-title-detail"> {productDetails.name}</p>
+                  <p className="text-title-detail">
+                    {" "}
+                    {productDetails.nameProduct}
+                  </p>
                   <Divider />
                   <p className="title-desc-detail">Product Description</p>
                   <p
@@ -106,7 +109,6 @@ export default function MediaCard() {
               <Button
                 onClick={() => handleClick(productDetails)}
                 variant="contained"
-                s
               >
                 Add To cart
               </Button>

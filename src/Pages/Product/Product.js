@@ -45,6 +45,7 @@ function Product() {
   const history = useHistory();
   const listProduct = useSelector((state) => state.product);
   const { products, loading, error } = listProduct;
+  console.log("Ini Product di view", listProduct);
 
   useEffect(() => {
     dispatch(getProductAction());
@@ -80,7 +81,7 @@ function Product() {
                             className={classes.img}
                             alt="complex"
                             onClick={() => handleClick(product.id)}
-                            src={`${product.imageId}`}
+                            src={`${product.imgUrl}`}
                           />
                         </ButtonBase>
                       </Grid>
@@ -94,15 +95,15 @@ function Product() {
                           spacing={2}
                         >
                           <Grid item xs>
-                            <Typography gutterBottom variant="subtitle1">
-                              {product.category}
-                            </Typography>
+                            {/* <Typography gutterBottom variant="subtitle1">
+                              {product.categoryId}
+                            </Typography> */}
                             <Typography
                               variant="body2"
                               gutterBottom
                               onClick={() => handleClick(product.id)}
                             >
-                              {product.name}
+                              {product.nameProduct}
                             </Typography>
                             <Typography variant="body2" gutterBottom>
                               Rp {product.price}
