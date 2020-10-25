@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import "./Booking.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -15,15 +15,14 @@ const useStyles = makeStyles((theme) => ({
 export default function FullWidthGrid() {
   const cart = useSelector((state) => state.cart);
   const total = useSelector((state) => state.totalBelanja);
-  console.log('total', total)
+  console.log("total", total);
   const { products } = cart;
-  const dispatch = useDispatch();
   const classes = useStyles();
 
   console.log(products);
   const subTotal = products.reduce((x, y) => {
-    return (x + y.price)
-  }, 0)
+    return x + y.price;
+  }, 0);
 
   return (
     <Fragment>
@@ -56,10 +55,9 @@ export default function FullWidthGrid() {
                   </div>
                   {products.length !== 0 && (
                     <div className="col-75">
-                    <p>Rp {products.reduce((x, y) => x + y.price, 0)}</p>
-                  </div>
+                      <p>Rp {products.reduce((x, y) => x + y.price, 0)}</p>
+                    </div>
                   )}
-                  
                 </div>
               </div>
               <Divider />
@@ -152,12 +150,12 @@ export default function FullWidthGrid() {
                 <h2>Total Payment</h2>
                 <div className="row">
                   <div className="col-25">
-                  <p>SubTotal</p>
+                    <p>SubTotal</p>
                   </div>
                   {products.length !== 0 && (
                     <div className="col-75">
-                    <p>Rp {products.reduce((x, y) => x + y.price, 0)}</p>
-                  </div>
+                      <p>Rp {products.reduce((x, y) => x + y.price, 0)}</p>
+                    </div>
                   )}
                 </div>
                 <div className="row">

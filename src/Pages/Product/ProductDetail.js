@@ -12,7 +12,7 @@ import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../Redux/Actions/cart.action";
-// import swal from "sweetalert";
+import swal from "sweetalert";
 import "./ProductDetail.css";
 
 // Pages
@@ -21,7 +21,7 @@ import { getProductById } from "../../Redux/Actions/product.action";
 
 const useStyles = makeStyles({
   media: {
-    height: 340,
+    height: 640,
   },
 });
 
@@ -40,12 +40,18 @@ export default function MediaCard() {
   const { productDetails } = detailProduct;
 
   function handleClick(e) {
-    dispatch(addToCart(e));
-    // swal({
-    //   title: "Produk berhasil masuk ke keranjang belanja!",
-    //   icon: "success",
-    //   button: "Mantap!",
-    // });
+    try {
+      dispatch(addToCart(e));
+      swal({
+        title: "Your product success add to cart!",
+        icon: "success",
+        button: "Great!",
+      });
+    } catch (error) {
+      swal({
+        icon: "error",
+      });
+    }
   }
   const rentHandler = (product) => {
     dispatch(addToCart(product));
@@ -97,28 +103,28 @@ export default function MediaCard() {
                   </p>
                 </CardContent>
               </CardActionArea>
-              {!localStorage.getItem('token') ? (
-                <Link  to="/login" style={{ textDecoration: "none" }}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => rentHandler(productDetails)}
-                >
-                  Rent Now
-                </Button>
-              </Link>
+              {!localStorage.getItem("token") ? (
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => rentHandler(productDetails)}
+                  >
+                    Rent Now
+                  </Button>
+                </Link>
               ) : (
-              <Link  to="/booking" style={{ textDecoration: "none" }}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => rentHandler(productDetails)}
-                >
-                  Rent Now
-                </Button>
-              </Link>
+                <Link to="/booking" style={{ textDecoration: "none" }}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => rentHandler(productDetails)}
+                  >
+                    Rent Now
+                  </Button>
+                </Link>
               )}
-              
+
               <Button
                 onClick={() => handleClick(productDetails)}
                 variant="contained"
