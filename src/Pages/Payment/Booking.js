@@ -1,9 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
+import { getDelivery } from "../../Redux/Actions/booking.action";
 import { useDispatch, useSelector } from "react-redux";
+
 import "./Booking.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -14,12 +16,38 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FullWidthGrid() {
   const cart = useSelector((state) => state.cart);
+  const booking = useSelector((state) => state.booking);
   const { products } = cart;
+  const { productsBooking } = booking;
   const dispatch = useDispatch();
   const classes = useStyles();
 
-  console.log(products);
+  useEffect(() => {
+    dispatch(getDelivery());
+  }, [dispatch]);
 
+  const allDelivery = [
+    { nama: "", harga: "" },
+    { nama: "JNE -", harga: 10000 },
+    { nama: "J&T -", harga: 9000 },
+    { nama: "TIKI -", harga: 10000 },
+  ];
+
+  const [delivery, setDelivery] = useState();
+
+  let subTotal = "";
+  const produkku = products.map((number) => number.price);
+  if (produkku.length > 0) {
+    subTotal = produkku.reduce((result, number) => result + number);
+  }
+
+  let totalPayment = "";
+  if (subTotal > 0 && delivery > 0) {
+    totalPayment = subTotal + delivery;
+  }
+
+  console.log("ini cart", produkku);
+  console.log("ini product booking", booking);
   return (
     <Fragment>
       <div className="cont-booking">
@@ -49,9 +77,7 @@ export default function FullWidthGrid() {
                   <div className="col-25">
                     <p>Total Price</p>
                   </div>
-                  <div className="col-75">
-                    <p>Rp 35.000.000</p>
-                  </div>
+                  <div className="col-75">{subTotal}</div>
                 </div>
               </div>
               <Divider />
@@ -104,10 +130,17 @@ export default function FullWidthGrid() {
                     <label for="delivery">Delivery</label>
                   </div>
                   <div className="col-75">
-                    <select id="shipping" name="shipping">
-                      <option value="jne">JNE</option>
-                      <option value="jnt">J&T</option>
-                      <option value="pos">POS Indonesia</option>
+                    <select
+                      value={delivery}
+                      onChange={(e) => setDelivery(parseInt(e.target.value))}
+                      name="delivery"
+                      id="delivery"
+                    >
+                      {allDelivery.map((item) => (
+                        <option value={item.harga}>
+                          {item.nama} {item.harga}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
@@ -116,11 +149,16 @@ export default function FullWidthGrid() {
                     <label for="payment">Payment Method</label>
                   </div>
                   <div className="col-75">
-                    <select id="pmethod" name="pmethod">
-                      <option value="jne">BCA</option>
-                      <option value="jnt">BRI</option>
-                      <option value="ovo">OVO</option>
-                      <option value="gopay">GOPAY</option>
+                    <select className="row">
+                      {productsBooking.length === 0 ? (
+                        <h3>Theres no item in your booking</h3>
+                      ) : (
+                        productsBooking.map((product) => (
+                          <option value={product.nomorRekening}>
+                            {product.nameMethod} - {product.nomorRekening}
+                          </option>
+                        ))
+                      )}
                     </select>
                   </div>
                 </div>
@@ -147,7 +185,7 @@ export default function FullWidthGrid() {
                     <p>SubTotal</p>
                   </div>
                   <div className="col-75">
-                    <p>Rp 35.000.000</p>
+                    <p>Rp {subTotal}</p>
                   </div>
                 </div>
                 <div className="row">
@@ -155,7 +193,7 @@ export default function FullWidthGrid() {
                     <p>Shipping Cost</p>
                   </div>
                   <div className="col-75">
-                    <p>Rp 35.000</p>
+                    <p>Rp {delivery}</p>
                   </div>
                 </div>
                 <Divider />
@@ -164,7 +202,7 @@ export default function FullWidthGrid() {
                     <p>Total Payment</p>
                   </div>
                   <div className="col-75">
-                    <p>Rp 35.035.000</p>
+                    <p>Rp {totalPayment}</p>
                   </div>
                 </div>
                 <Button variant="contained" color="secondary" disableElevation>
