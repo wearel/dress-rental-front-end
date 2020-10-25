@@ -31,13 +31,14 @@ function Login() {
     password: "",
   });
 
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
 
   useEffect(() => {
     // do stuff
     if (user.error !== null) {
       setError(user.error);
     }
+    // eslint-disable-next-line
   }, [user]);
 
   // handleChange form
