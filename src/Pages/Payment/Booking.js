@@ -5,6 +5,9 @@ import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import { getDelivery } from "../../Redux/Actions/booking.action";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import swal from "sweetalert";
+
 import "./Booking.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -41,7 +44,6 @@ export default function FullWidthGrid() {
     subTotal = produkku.reduce((result, number) => result + number);
   }
 
-
   let totalPayment = "";
   if (subTotal > 0 && delivery > 0) {
     totalPayment = subTotal + delivery;
@@ -49,6 +51,23 @@ export default function FullWidthGrid() {
 
   console.log("ini cart", produkku);
   console.log("ini product booking", booking);
+
+  let history = useHistory();
+
+  function handleClick() {
+    try {
+      history.push("/modal");
+      swal({
+        title: "Thank You for your booking",
+        icon: "success",
+        button: "Great!",
+      });
+    } catch (error) {
+      swal({
+        icon: "error",
+      });
+    }
+  }
   return (
     <Fragment>
       <div className="cont-booking">
@@ -207,7 +226,12 @@ export default function FullWidthGrid() {
                     <p>Rp {totalPayment}</p>
                   </div>
                 </div>
-                <Button variant="contained" color="secondary" disableElevation>
+                <Button
+                  onClick={handleClick}
+                  variant="contained"
+                  color="secondary"
+                  disableElevation
+                >
                   Booking Now
                 </Button>
               </div>
