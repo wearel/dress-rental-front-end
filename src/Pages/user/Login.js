@@ -31,7 +31,7 @@ function Login() {
     password: "",
   });
 
-  const [setError] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     // do stuff
