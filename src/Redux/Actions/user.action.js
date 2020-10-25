@@ -51,7 +51,7 @@ export const registerActions = (values, event, history) => (dispatch) => {
     // console.log('tes param', values);
 
     return axios
-        .post("http://localhost:8080/register", values)
+        .post("https://server-gaunrental.herokuapp.com/api/v1/register", values)
         .then((response) => {
             console.log('res', response);
             dispatch(setRegister(response.data.user));
@@ -74,7 +74,7 @@ export const loginActions = (values, event, history) => {
         // console.log("tes berhasil", values);
 
         return axios
-        .post("http://localhost:8080/login", values)
+        .post("https://server-gaunrental.herokuapp.com/api/v1/login", values)
         .then((response)=>{
             // console.log(response);
 

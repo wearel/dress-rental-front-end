@@ -16,7 +16,7 @@ import Contact from "./Pages/Contact/Contact";
 import Detail from "./Pages/Product/ProductDetail";
 import Booking from "./Pages/Payment/Booking";
 import Modal from "./Pages/Payment/ModalSuccess";
-
+import Cart from "./Pages/Payment/Cart";
 
 function App() {
   return (
@@ -44,6 +44,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/cart">
+            <Cart />
           </Route>
           <Route path="/login">
             <Login />

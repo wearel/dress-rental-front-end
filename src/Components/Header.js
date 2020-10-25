@@ -8,6 +8,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Logo from "../Assets/Logo.png";
 import "./Header.css";
 
@@ -53,11 +54,6 @@ function Header() {
               <p className="title">Home</p>
             </Link>
           </Typography>
-          {/* <Typography>
-            <Link to="/detail-product/:id" style={{ textDecoration: "none" }}>
-              <p className="title">Detail</p>
-            </Link>
-          </Typography> */}
           <Typography>
             <Link to="/product" style={{ textDecoration: "none" }}>
               <p className="title">Product</p>
@@ -65,13 +61,25 @@ function Header() {
           </Typography>
           <Typography>
             <Link to="/about" style={{ textDecoration: "none" }}>
-              <p className="title">About Us</p>
+              <p className="title">About</p>
             </Link>
           </Typography>
           <Typography>
             <Link to="/contact" style={{ textDecoration: "none" }}>
-              <p className="title">Contact Us</p>
+              <p className="title">Contact</p>
             </Link>
+          </Typography>
+          <Typography>
+            <Link to="/cart" style={{ textDecoration: "none" }}>
+              <ShoppingCartIcon />
+            </Link>
+          </Typography>
+          <Typography>
+          <Link to="/cart" style={{ textDecoration: "none" }}>
+            </Link>
+            {/* <Link to="/cart" style={{ textDecoration: "none", width: '300px' }}>
+              My Cart
+            </Link> */}
           </Typography>
           <div className={classes.root}>
             <Button variant="contained" color="secondary">

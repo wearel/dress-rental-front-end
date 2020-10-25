@@ -12,16 +12,16 @@ import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../Redux/Actions/cart.action";
+import swal from "sweetalert";
 import "./ProductDetail.css";
 
 // Pages
 import GalleryProduct from "./GalleryProduct";
-
 import { getProductById } from "../../Redux/Actions/product.action";
 
 const useStyles = makeStyles({
   media: {
-    height: 340,
+    height: 640,
   },
 });
 
@@ -39,21 +39,36 @@ export default function MediaCard() {
   const detailProduct = useSelector((state) => state.product);
   const { productDetails } = detailProduct;
 
+  function handleClick(e) {
+    try {
+      dispatch(addToCart(e));
+      swal({
+        title: "Your product success add to cart!",
+        icon: "success",
+        button: "Great!",
+      });
+    } catch (error) {
+      swal({
+        icon: "error",
+      });
+    }
+  }
   const rentHandler = (product) => {
     dispatch(addToCart(product));
   };
 
   console.log("component detail product", detailProduct);
+
   return (
     <Fragment>
       <div className="cont-product-detail">
         <Card>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
-              <CardActionArea className="test">
+              <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image={productDetails.imageId}
+                  image={productDetails.imgUrl}
                   title="Contemplative Reptile"
                 />
                 <GalleryProduct />
@@ -62,7 +77,10 @@ export default function MediaCard() {
             <Grid item xs={12} sm={6}>
               <CardActionArea>
                 <CardContent>
-                  <p className="text-title-detail"> {productDetails.name}</p>
+                  <p className="text-title-detail">
+                    {" "}
+                    {productDetails.nameProduct}
+                  </p>
                   <Divider />
                   <p className="title-desc-detail">Product Description</p>
                   <p
@@ -85,15 +103,34 @@ export default function MediaCard() {
                   </p>
                 </CardContent>
               </CardActionArea>
-              <Link to="/booking" style={{ textDecoration: "none" }}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => rentHandler(productDetails)}
-                >
-                  Rent Now
-                </Button>
-              </Link>
+              {!localStorage.getItem("token") ? (
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => rentHandler(productDetails)}
+                  >
+                    Rent Now
+                  </Button>
+                </Link>
+              ) : (
+                <Link to="/booking" style={{ textDecoration: "none" }}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => rentHandler(productDetails)}
+                  >
+                    Rent Now
+                  </Button>
+                </Link>
+              )}
+
+              <Button
+                onClick={() => handleClick(productDetails)}
+                variant="contained"
+              >
+                Add To cart
+              </Button>
               <CardActions>
                 <Button size="small" color="primary">
                   Share

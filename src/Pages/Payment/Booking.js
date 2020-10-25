@@ -5,7 +5,6 @@ import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import { getDelivery } from "../../Redux/Actions/booking.action";
 import { useDispatch, useSelector } from "react-redux";
-
 import "./Booking.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -16,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FullWidthGrid() {
   const cart = useSelector((state) => state.cart);
+
   const booking = useSelector((state) => state.booking);
   const { products } = cart;
   const { productsBooking } = booking;
@@ -41,6 +41,7 @@ export default function FullWidthGrid() {
     subTotal = produkku.reduce((result, number) => result + number);
   }
 
+
   let totalPayment = "";
   if (subTotal > 0 && delivery > 0) {
     totalPayment = subTotal + delivery;
@@ -63,7 +64,7 @@ export default function FullWidthGrid() {
                     products.map((product) => (
                       <div className="row">
                         <div className="col-25">
-                          <p>{product.name}</p>
+                          <p>{product.nameProduct}</p>
                         </div>
                         <div className="col-75">
                           <p>{product.price}</p>
@@ -184,6 +185,7 @@ export default function FullWidthGrid() {
                   <div className="col-25">
                     <p>SubTotal</p>
                   </div>
+
                   <div className="col-75">
                     <p>Rp {subTotal}</p>
                   </div>
