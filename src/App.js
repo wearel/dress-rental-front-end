@@ -10,7 +10,7 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home/HomePage";
 import Product from "./Pages/Product/Product";
 import About from "./Pages/About/About";
-import Login from "./Pages/user/Login";
+// import Login from "./Pages/user/Login";
 import Register from "./Pages/user/Register";
 import Contact from "./Pages/Contact/Contact";
 import Detail from "./Pages/Product/ProductDetail";
@@ -48,9 +48,9 @@ function App() {
           <Route path="/cart">
             <Cart />
           </Route>
-          <Route path="/login">
+          {/* <Route path="/login">
             <Login />
-          </Route>
+          </Route> */}
           <Route path="/register">
             <Register />
           </Route>
