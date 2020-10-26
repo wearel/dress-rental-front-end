@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
@@ -31,15 +31,15 @@ function Login() {
     password: "",
   });
 
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // do stuff
-    if (user.error !== null) {
-      setError(user.error);
-    }
-    // eslint-disable-next-line
-  }, [user]);
+  // useEffect(() => {
+  //   // do stuff
+  //   if (user.error !== null) {
+  //     setError(user.error);
+  //   }
+  // eslint-disable-next-line
+  // }, [user]);
 
   // handleChange form
 
@@ -54,9 +54,9 @@ function Login() {
   const handleSubmit = (event) => {
     dispatch(loginActions(login, event, history));
 
-    if (user.error !== null) {
-      setError(user.error);
-    }
+    // if (user.error !== null) {
+    //   setError(user.error);
+    // }
 
     // event.preventDefault();
 
