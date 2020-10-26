@@ -28,7 +28,6 @@ function Header() {
   const history = useHistory();
 
   const dataUser = useSelector((state) => state.user);
-  console.log("data user", dataUser);
 
   // useEffect(() => {
   //   dispatch(getUserInfoAction());
@@ -36,12 +35,10 @@ function Header() {
   // }, [dispatch, dataUser]);
 
   const logoutSuccess = () => {
-    console.log("logout");
     dispatch(userLogout(history));
     localStorage.removeItem("token");
 
     alert("logout");
-    console.log("slesai logoout", dataUser);
   };
 
   return (

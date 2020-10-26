@@ -49,9 +49,6 @@ export default function FullWidthGrid() {
     totalPayment = subTotal + delivery;
   }
 
-  console.log("ini cart", produkku);
-  console.log("ini product booking", booking);
-
   let history = useHistory();
 
   function handleClick() {

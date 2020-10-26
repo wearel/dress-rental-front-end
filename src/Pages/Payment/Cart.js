@@ -15,8 +15,6 @@ function Cart() {
   const cart = useSelector((state) => state.cart);
   const { products } = cart;
 
-  console.log(products);
-
   return (
     <div className="cont-cart">
       <h1>Your Product Cart</h1>

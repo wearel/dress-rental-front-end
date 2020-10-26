@@ -30,7 +30,6 @@ function Register() {
   });
 
   const isLogged = useSelector((state) => state.user);
-  console.log("isLogged", isLogged);
 
   // handleChange form
   const handleChange = (event) => {

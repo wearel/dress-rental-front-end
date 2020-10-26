@@ -68,8 +68,6 @@ function Login() {
     //   .catch((error) => console.log(error));
   };
 
-  // console.log("state error", error);
-
   return (
     <div className="cont-login">
       <Grid container spacing={0} justify="center" style={{ marginTop: 130 }}>

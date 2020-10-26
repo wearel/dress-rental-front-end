@@ -45,7 +45,6 @@ function Product() {
   const history = useHistory();
   const listProduct = useSelector((state) => state.product);
   const { products, loading, error } = listProduct;
-  console.log("Ini Product di view", listProduct);
 
   useEffect(() => {
     dispatch(getProductAction());

@@ -57,8 +57,6 @@ export default function MediaCard() {
     dispatch(addToCart(product));
   };
 
-  console.log("component detail product", detailProduct);
-
   return (
     <Fragment>
       <div className="cont-product-detail">
