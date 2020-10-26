@@ -7,7 +7,6 @@ import DressFour from "../../../Assets/dress-4.jpg";
 
 function dress() {
   return (
-    // Cont 1
     <div className="cont-dress">
       <div>
         <div>
@@ -18,7 +17,6 @@ function dress() {
         </div>
       </div>
 
-      {/* Cont 2 */}
       <div className="cont-dress-two">
         <div className="img-space">
           <img className="img-dress-in " src={DressOne} alt="dress one" />
@@ -28,7 +26,6 @@ function dress() {
         </div>
       </div>
 
-      {/* Cont 3 */}
       <div>
         <div>
           <div className="img-space">

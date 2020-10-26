@@ -50,23 +50,35 @@ function Header() {
         <Toolbar className="appbar">
           <img className="logo" src={Logo} alt="logo" />
           <Typography>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <p className="title">Home</p>
+            <Link to="/" className="title" style={{ textDecoration: "none" }}>
+              Home
             </Link>
           </Typography>
           <Typography>
-            <Link to="/product" style={{ textDecoration: "none" }}>
-              <p className="title">Product</p>
+            <Link
+              to="/product"
+              className="title"
+              style={{ textDecoration: "none" }}
+            >
+              Product
             </Link>
           </Typography>
           <Typography>
-            <Link to="/about" style={{ textDecoration: "none" }}>
-              <p className="title">About</p>
+            <Link
+              to="/about"
+              className="title"
+              style={{ textDecoration: "none" }}
+            >
+              About
             </Link>
           </Typography>
           <Typography>
-            <Link to="/contact" style={{ textDecoration: "none" }}>
-              <p className="title">Contact</p>
+            <Link
+              to="/contact"
+              className="title"
+              style={{ textDecoration: "none" }}
+            >
+              Contact
             </Link>
           </Typography>
           <Typography>
@@ -95,11 +107,6 @@ function Header() {
                 </div>
               )}
             </Button>
-            {/* <Button variant="contained" color="secondary">
-              <Link to="/register" style={{ textDecoration: "none" }}>
-                Register
-              </Link>
-            </Button> */}
           </div>
         </Toolbar>
       </AppBar>
