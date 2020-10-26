@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
 import { loginActions } from "../../Redux/Actions/user.action";
@@ -23,7 +23,7 @@ import { AccountCircle, LockRounded } from "@material-ui/icons";
 
 function Login() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
   const history = useHistory();
 
   const [login, setLogin] = useState({
@@ -31,15 +31,15 @@ function Login() {
     password: "",
   });
 
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // do stuff
-    if (user.error !== null) {
-      setError(user.error);
-    }
-    // eslint - disable - next - line;
-  }, [user]);
+  // useEffect(() => {
+  //   // do stuff
+  //   if (user.error !== null) {
+  //     setError(user.error);
+  //   }
+  //   // eslint - disable - next - line;
+  // }, [user]);
 
   // handleChange form
 
