@@ -8,7 +8,6 @@ import "../user/Register.css";
 import GambarRegister from "../../Assets/gambar-login-register.jpg";
 // import Axios from "axios";
 
-
 // --------------- material ui core component ---------------
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -31,7 +30,7 @@ function Register() {
   });
 
   const isLogged = useSelector((state) => state.user);
-  console.log('isLogged', isLogged);
+  console.log("isLogged", isLogged);
 
   // handleChange form
   const handleChange = (event) => {
@@ -54,23 +53,21 @@ function Register() {
       <div>
         <Grid container spacing={0} justify="center" style={{ marginTop: 130 }}>
           <Grid item>
-            <Paper
-              style={{ height: 500, width: 800,  display: "flex" }}
-            >
-              {/* --------------- section register --------------- */}
+            <Paper style={{ height: 500, width: 800, display: "flex" }}>
               <div style={{ height: 500, width: 400 }}>
+                <h3
+                  style={{
+                    color: "#2e505e",
+                  }}
+                >
+                  Register
+                </h3>
 
-                {/* -------------- judul register --------------- */}
-                <h3 style={{
-                  color: "#2e505e"
-                }}>Register</h3>
-                {/* -------------- form register -------------- */}
                 <form
                   onSubmit={(event) => {
-
                     dispatch(registerActions(register, event, history));
-                }}>
-                  
+                  }}
+                >
                   <div
                     style={{
                       display: "flex",
@@ -81,7 +78,6 @@ function Register() {
                       marginRight: 70,
                     }}
                   >
-                    {/* --------------- input Full Name pada form --------------- */}
                     <TextField
                       label="Full Name"
                       margin="normal"
@@ -97,7 +93,6 @@ function Register() {
                       onChange={(event) => handleChange(event)}
                     />
 
-                    {/* --------------- input email pada form --------------- */}
                     <TextField
                       label="E-mail"
                       margin="normal"
@@ -113,7 +108,6 @@ function Register() {
                       onChange={(event) => handleChange(event)}
                     />
 
-                    {/* --------------- input password pada form --------------- */}
                     <TextField
                       label="Password"
                       margin="normal"
@@ -130,7 +124,6 @@ function Register() {
                       onChange={(event) => handleChange(event)}
                     />
 
-                    {/* --------------- input Phone Number pada form --------------- */}
                     <TextField
                       label="Phone Number"
                       margin="normal"
@@ -158,7 +151,10 @@ function Register() {
                 <h6 style={{ marginTop: 0, marginBottom: 0, color: "#2e505e" }}>
                   Already have an account ? please
                   <Button style={{ color: "#fia3ad" }}>
-                    <Link to="/login" style={{ textDecoration: "none", color: "#2e505e" }}>
+                    <Link
+                      to="/login"
+                      style={{ textDecoration: "none", color: "#2e505e" }}
+                    >
                       Login
                     </Link>
                   </Button>
@@ -166,21 +162,25 @@ function Register() {
                 <h6 style={{ marginTop: 0, color: "#2e505e" }}>
                   More info ? please back to
                   <Button style={{ color: "#fia3ad" }}>
-                    <Link to="/" style={{ textDecoration: "none", color: "#2e505e" }}>
+                    <Link
+                      to="/"
+                      style={{ textDecoration: "none", color: "#2e505e" }}
+                    >
                       Home
                     </Link>
                   </Button>
                 </h6>
               </div>
 
-              {/* --------------- section gambar --------------- */}
               <div>
-              <img 
-              style={{
-                height:500,
-                width:400,
-              }}
-              src={GambarRegister} alt="gambar register" />
+                <img
+                  style={{
+                    height: 500,
+                    width: 400,
+                  }}
+                  src={GambarRegister}
+                  alt="gambar register"
+                />
               </div>
             </Paper>
           </Grid>

@@ -37,7 +37,6 @@ export default function Foto() {
   return (
     <div className="root">
       <Grid container style={{ marginLeft: "3rem" }}>
-        {/* Gambar 1 */}
         <Grid sm={6}>
           <Grid
             item
@@ -57,7 +56,6 @@ export default function Foto() {
         >
           <Grid spacing={2}>
             <Grid style={{ textAlign: "left" }}>
-              {/* Teks 1 */}
               <Typography
                 gutterBottom
                 variant="subtitle1"
@@ -80,7 +78,6 @@ export default function Foto() {
                 clothed in gold is approximately 45 cm tall.
               </Typography>
 
-              {/* Teks 3 */}
               <Typography
                 variant="body2"
                 className={classes.itemGrid2}

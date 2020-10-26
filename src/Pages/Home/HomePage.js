@@ -9,7 +9,6 @@ import "./HomaPage.css";
 function HomePage() {
   return (
     <Fragment>
-      {/* Section 1 */}
       <div className="cont-home">
         <div>
           <p className="title-text">Find Your Best Dress For Wedding</p>
@@ -30,11 +29,11 @@ function HomePage() {
           <img src={Couple} alt="couple" />
         </div>
       </div>
-      {/* Section 2 */}
+
       <div>
         <Dress />
       </div>
-      {/* Section 3 */}
+
       <div>
         <Testimony />
       </div>

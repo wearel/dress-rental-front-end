@@ -21,7 +21,6 @@ function Arrow(props) {
 }
 
 function App() {
-  // useState
   const [index, setIndex] = useState(0);
   const content = SLIDE_INFO[index];
   const numSlides = SLIDE_INFO.length;
@@ -44,14 +43,12 @@ function App() {
     }, 500);
   };
 
-  //   UseEffect
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Fungsi ke kanan
       if (e.keyCode === 39) {
         onArrowClick("right");
       }
-      //   Fungsi ke kiri
+
       if (e.keyCode === 37) {
         onArrowClick("left");
       }
@@ -64,16 +61,14 @@ function App() {
 
   return (
     <div className="slide">
-      {/* Arrow ke kiri */}
       <Arrow direction="left" clickFunction={() => onArrowClick("left")} />
 
-      {/* Testimoni */}
       <Slide in={slideIn} direction={slideDirection}>
         <div>
           <CarouselSlide content={content} />
         </div>
       </Slide>
-      {/* Arrow ke kanan */}
+
       <Arrow direction="right" clickFunction={() => onArrowClick("right")} />
     </div>
   );

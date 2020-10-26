@@ -11,7 +11,6 @@ function Footer() {
   return (
     <Fragment>
       <div className="cont-footer">
-        {/* Satu */}
         <div className="cont-footer-dua">
           <img src={Logo} alt="logo" />
           <p className="text-footer-about">
@@ -21,7 +20,7 @@ function Footer() {
           </p>
           <p className="text-footer-about">©2020 Wearel. All rights reserved</p>
         </div>
-        {/* Dua */}
+
         <div className="cont-footer-dua">
           <h1 className="text-footer-title">Services</h1>
           <p className="text-footer-list">Booking</p>
@@ -30,7 +29,7 @@ function Footer() {
           <p className="text-footer-list">Listing</p>
           <p className="text-footer-list">Vendor</p>
         </div>
-        {/* tiga */}
+
         <div className="cont-footer-dua">
           <h1 className="text-footer-title">Contact</h1>
           <p className="text-footer-list">
@@ -40,7 +39,7 @@ function Footer() {
           <p className="text-footer-list">+62858489433</p>
           <p className="text-footer-list">(0286) 394843</p>
         </div>
-        {/* Empat */}
+
         <div className="cont-footer-dua">
           <h1 className="text-footer-title">General</h1>
           <p className="text-footer-list">News</p>

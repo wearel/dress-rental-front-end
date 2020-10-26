@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
@@ -12,7 +12,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Logo from "../Assets/Logo.png";
 import "./Header.css";
 
-import { getUserInfoAction, userLogout } from "../Redux/Actions/user.action";
+import { userLogout } from "../Redux/Actions/user.action";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -30,10 +30,10 @@ function Header() {
   const dataUser = useSelector((state) => state.user);
   console.log("data user", dataUser);
 
-  useEffect(() => {
-    dispatch(getUserInfoAction());
-    // eslint-disable-next-line
-  }, [dispatch, dataUser]);
+  // useEffect(() => {
+  //   dispatch(getUserInfoAction());
+  //   // eslint-disable-next-line
+  // }, [dispatch, dataUser]);
 
   const logoutSuccess = () => {
     console.log("logout");
@@ -50,23 +50,35 @@ function Header() {
         <Toolbar className="appbar">
           <img className="logo" src={Logo} alt="logo" />
           <Typography>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <p className="title">Home</p>
+            <Link to="/" className="title" style={{ textDecoration: "none" }}>
+              Home
             </Link>
           </Typography>
           <Typography>
-            <Link to="/product" style={{ textDecoration: "none" }}>
-              <p className="title">Product</p>
+            <Link
+              to="/product"
+              className="title"
+              style={{ textDecoration: "none" }}
+            >
+              Product
             </Link>
           </Typography>
           <Typography>
-            <Link to="/about" style={{ textDecoration: "none" }}>
-              <p className="title">About</p>
+            <Link
+              to="/about"
+              className="title"
+              style={{ textDecoration: "none" }}
+            >
+              About
             </Link>
           </Typography>
           <Typography>
-            <Link to="/contact" style={{ textDecoration: "none" }}>
-              <p className="title">Contact</p>
+            <Link
+              to="/contact"
+              className="title"
+              style={{ textDecoration: "none" }}
+            >
+              Contact
             </Link>
           </Typography>
           <Typography>
@@ -75,8 +87,7 @@ function Header() {
             </Link>
           </Typography>
           <Typography>
-          <Link to="/cart" style={{ textDecoration: "none" }}>
-            </Link>
+            <Link to="/cart" style={{ textDecoration: "none" }}></Link>
             {/* <Link to="/cart" style={{ textDecoration: "none", width: '300px' }}>
               My Cart
             </Link> */}
@@ -96,11 +107,6 @@ function Header() {
                 </div>
               )}
             </Button>
-            {/* <Button variant="contained" color="secondary">
-              <Link to="/register" style={{ textDecoration: "none" }}>
-                Register
-              </Link>
-            </Button> */}
           </div>
         </Toolbar>
       </AppBar>

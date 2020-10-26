@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
 import { loginActions } from "../../Redux/Actions/user.action";
@@ -23,7 +23,7 @@ import { AccountCircle, LockRounded } from "@material-ui/icons";
 
 function Login() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
   const history = useHistory();
 
   const [login, setLogin] = useState({
@@ -31,15 +31,15 @@ function Login() {
     password: "",
   });
 
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // do stuff
-    if (user.error !== null) {
-      setError(user.error);
-    }
-    // eslint - disable - next - line;
-  }, [user]);
+  // useEffect(() => {
+  //   // do stuff
+  //   if (user.error !== null) {
+  //     setError(user.error);
+  //   }
+  //   // eslint - disable - next - line;
+  // }, [user]);
 
   // handleChange form
 
@@ -78,7 +78,6 @@ function Login() {
             className="paper-login"
             style={{ height: 500, width: 800, display: "flex" }}
           >
-            {/* --------------- section gambar --------------- */}
             <div>
               <img
                 className="gambar-login"
@@ -91,8 +90,6 @@ function Login() {
               />
             </div>
 
-            {/* --------------- section login --------------- */}
-            {/* --------------- logo ---------------- */}
             <div style={{ height: 500, width: 400 }}>
               <img
                 style={{
@@ -105,7 +102,7 @@ function Login() {
                 src={Logo}
                 alt="gambar logo"
               />
-              {/* --------------- judul login --------------- */}
+
               <h3
                 style={{
                   marginBottom: 0,
@@ -114,7 +111,7 @@ function Login() {
               >
                 Login
               </h3>
-              {/* --------------- Form --------------- */}
+
               <form onSubmit={handleSubmit}>
                 <div
                   style={{
@@ -126,7 +123,6 @@ function Login() {
                     marginRight: 70,
                   }}
                 >
-                  {/* -------------- input email pada form --------------- */}
                   <TextField
                     label="E-mail"
                     margin="normal"
@@ -142,7 +138,6 @@ function Login() {
                     onChange={(event) => handleChange(event)}
                   />
 
-                  {/* --------------- input password pada form --------------- */}
                   <TextField
                     label="Password"
                     margin="normal"
@@ -164,7 +159,6 @@ function Login() {
                 </div>
               </form>
 
-              {/* --------------- bukan button form --------------- */}
               <h6 style={{ marginBottom: 0, marginTop: 0, color: "#2e505e" }}>
                 Don't have an account ? please
                 <Button style={{ color: "#fia3ad" }}>
